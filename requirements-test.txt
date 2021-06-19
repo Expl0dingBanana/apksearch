@@ -1,1 +1,8 @@
 pytest
+pytest-asyncio
+flake8
+flake8-variables-names
+flake8-logging-format
+flake8-eradicate
+black
+pep8-naming
