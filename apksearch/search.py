@@ -2,14 +2,14 @@ import asyncio
 import copy
 import logging
 import ssl
-from typing import Awaitable, Dict, Hashable, List, Tuple
+from typing import Awaitable, Dict, Hashable, List, Tuple, Union
 
 import aiohttp
 
 from . import parsing
 from .entities import PackageBase, PackageVariant, PackageVersion
 
-__all__ = ["package_search"]
+__all__ = ["package_search", "package_search_async"]
 
 
 QUERY_URL: str = "https://www.apkmirror.com"
@@ -20,7 +20,7 @@ QUERY_PARAMS: Dict[str, str] = {
     "minapi": "true",
 }
 HEADERS = {
-    "user-agent": "apksearch APKMirrorSearcher/0.0.1",
+    "user-agent": "apksearch APKMirrorSearcher/0.0.2",
 }
 
 logger = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ async def gather_from_dict(tasks: Dict[Hashable, Awaitable], loop=None, return_e
     return dict(zip(tasks.keys(), results))
 
 
-async def _generate_params_list(packages: List[str]) -> List[str]:
+def _generate_params_list(packages: List[str]) -> List[str]:
     param_list = []
     for package in packages:
         params = copy.copy(QUERY_PARAMS)
@@ -40,15 +40,25 @@ async def _generate_params_list(packages: List[str]) -> List[str]:
     return param_list
 
 
-async def package_search(packages: List[str]) -> Dict[str, PackageBase]:
+def package_search(packages: List[str]) -> Dict[str, PackageBase]:
     """Entrypoint for performing the search"""
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    return loop.run_until_complete(package_search_async(packages))
+
+
+async def package_search_async(packages: List[str]) -> Dict[str, PackageBase]:
+    """Entrypoint for performing the search async"""
     search_results = await execute_package_search(packages)
-    package_defs = await parsing.process_search_result(search_results)
+    package_defs = parsing.process_search_result(search_results)
     logger.debug("Packages found: %s", ",".join(list(package_defs.keys())))
     release_defs = await execute_release_info(package_defs)
-    await parsing.process_release_result(release_defs)
+    parsing.process_release_result(release_defs)
     variant_defs = await execute_variant_info(package_defs)
-    await parsing.process_variant_result(variant_defs)
+    parsing.process_variant_result(variant_defs)
     return package_defs
 
 
@@ -61,9 +71,9 @@ async def execute_package_search(packages: List[str]) -> List[str]:
     :return: A list of results containing the first page of each package search
     :rtype: list
     """
-    param_list: List[str] = await _generate_params_list(packages)
-    search_results = await asyncio.gather(_perform_search(param_list))
-    return search_results[0]
+    param_list: List[str] = _generate_params_list(packages)
+    loop = asyncio.get_running_loop()
+    return await _perform_search(loop, param_list)
 
 
 async def execute_release_info(packages: Dict[str, PackageBase]) -> Dict[PackageVersion, str]:
@@ -77,8 +87,7 @@ async def execute_release_info(packages: Dict[str, PackageBase]) -> Dict[Package
         for package_version in info.versions.values():
             releases.append(package_version)
     loop = asyncio.get_running_loop()
-    results = loop.run_until_complete(_perform_release(loop, releases))
-    return results
+    return await _perform_dict_lookup(loop, releases)
 
 
 async def execute_variant_info(packages: Dict[str, PackageBase]) -> Dict[PackageVersion, str]:
@@ -88,13 +97,12 @@ async def execute_variant_info(packages: Dict[str, PackageBase]) -> Dict[Package
             for arch in package_version.arch.values():
                 variants.extend(arch)
     loop = asyncio.get_running_loop()
-    results = loop.run_until_complete(_perform_variant(loop, variants))
-    return results
+    return await _perform_dict_lookup(loop, variants)
 
 
 async def gather_release_info(releases: List[PackageBase]) -> Tuple[PackageVersion, PackageVariant, str]:
     loop = asyncio.get_running_loop()
-    results = loop.run_until_complete(_perform_release(loop, releases))
+    results = loop.run_until_complete(_perform_dict_lookup(loop, releases))
     return results
 
 
@@ -104,9 +112,7 @@ async def _fetch_one(session, url, params):
         return await response.text()
 
 
-async def _perform_search(query_params: List[str], loop=None):
-    if loop is None:
-        loop = asyncio.get_running_loop()
+async def _perform_search(loop, query_params: List[str]):
     async with aiohttp.ClientSession(loop=loop) as session:
         required_urls = [_fetch_one(session, QUERY_URL, param) for param in query_params]
         logger.info("About to query %s packages", len(required_urls))
@@ -117,21 +123,19 @@ async def _perform_search(query_params: List[str], loop=None):
         return results
 
 
-async def _perform_release(loop, releases: List[PackageVersion]):
+async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, PackageVariant]]):
+    if len(requests) == 0:
+        return []
+    if type(requests[0]) == PackageVersion:
+        identifier = "releases"
+        url_attr = "link"
+    else:
+        identifier = "variants"
+        url_attr = "download_page"
     async with aiohttp.ClientSession(loop=loop) as session:
         tasks = {}
-        logger.info("About to query %s releases", len(releases))
-        for request in releases:
-            tasks[request] = _fetch_one(session, request.link, {})
-        results = await gather_from_dict(tasks)
-        return results
-
-
-async def _perform_variant(loop, variants: List[PackageVariant]):
-    async with aiohttp.ClientSession(loop=loop) as session:
-        tasks = {}
-        logger.info("About to query %s releases", len(variants))
-        for request in variants:
-            tasks[request] = _fetch_one(session, request.download_page, {})
+        logger.info("About to query %s %s", len(requests), identifier)
+        for request in requests:
+            tasks[request] = _fetch_one(session, getattr(request, url_attr), {})
         results = await gather_from_dict(tasks)
         return results
