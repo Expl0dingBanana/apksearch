@@ -2,7 +2,6 @@ import logging
 
 from .search import package_search, package_search_async
 
-
 __all__ = ["package_search", "package_search_async"]
 
 

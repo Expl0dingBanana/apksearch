@@ -20,7 +20,7 @@ QUERY_PARAMS: Dict[str, str] = {
     "minapi": "true",
 }
 HEADERS = {
-    "user-agent": "apksearch APKMirrorSearcher/0.0.2",
+    "user-agent": "apksearch APKMirrorSearcher/0.0.3",
 }
 
 logger = logging.getLogger(__name__)
