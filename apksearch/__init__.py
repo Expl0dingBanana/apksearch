@@ -1,10 +1,7 @@
 import logging
 
-import nest_asyncio
-
 from .search import package_search, package_search_async
 
-nest_asyncio.apply()
 
 __all__ = ["package_search", "package_search_async"]
 
