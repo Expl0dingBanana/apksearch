@@ -19,7 +19,7 @@ BASE_URL: str = "https://www.apkmirror.com"
 DOWNLOAD_URL: str = "https://www.apkmirror.com/wp-content/themes/APKMirror/download.php?id={}{}"
 
 
-async def process_search_result(results: List[str]) -> Dict[str, PackageBase]:
+def process_search_result(results: List[str]) -> Dict[str, PackageBase]:
     """Process the result of the search
 
     :param list results: List of results from querying the search page
@@ -47,7 +47,7 @@ async def process_search_result(results: List[str]) -> Dict[str, PackageBase]:
     return package_defs
 
 
-async def process_release_result(results: Dict[PackageVersion, str]):
+def process_release_result(results: Dict[PackageVersion, str]):
     """Process the result of the release page
 
     :param dict results: Results from the aiohttp request
@@ -72,7 +72,7 @@ async def process_release_result(results: Dict[PackageVersion, str]):
             package_version.arch[architecture].append(package_variant)
 
 
-async def process_variant_result(results: Dict[PackageVariant, str]):
+def process_variant_result(results: Dict[PackageVariant, str]):
     """Processes the result of a specific variant
 
     :param dict results: Results from the aiohttp request
