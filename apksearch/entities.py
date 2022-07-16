@@ -8,13 +8,17 @@ class PackageVariant(object):
         dpi: str,
         version_code: int,
         download_url: str = None,
-        download_page: str = None,
+        variant_info: str = None,
+        variant_download_page: str = None,
+        package: str = None,
     ):
         self.apk_type: str = apk_type
         self.download_url: str = download_url
-        self.download_page: str = download_page
+        self.variant_info: str = variant_info
+        self.variant_download_page: str = variant_download_page
         self.dpi: str = dpi
         self.version_code: int = version_code
+        self.package = package
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__
@@ -50,10 +54,12 @@ class PackageBase(object):
         title: str,
         info_page: str = None,
         versions: Dict[str, PackageVersion] = None,
+        package: str = None,
     ):
         self.title: str = title
         self.info_page: str = info_page
         self.versions: dict[str, PackageVersion] = versions if versions else {}
+        self.package = package
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__ and self.versions == other.versions

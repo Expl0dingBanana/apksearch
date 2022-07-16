@@ -12,6 +12,7 @@ from .entities import PackageBase, PackageVariant, PackageVersion
 __all__ = ["package_search", "package_search_async"]
 
 
+NUM_REQS: int = 5
 QUERY_URL: str = "https://www.apkmirror.com"
 QUERY_PARAMS: Dict[str, str] = {
     "post_type": "app_release",
@@ -20,7 +21,7 @@ QUERY_PARAMS: Dict[str, str] = {
     "minapi": "true",
 }
 HEADERS = {
-    "user-agent": "apksearch APKMirrorSearcher/0.0.3",
+    "user-agent": "apksearch APKMirrorSearcher/0.0.4",
 }
 
 logger = logging.getLogger(__name__)
@@ -52,14 +53,60 @@ def package_search(packages: List[str]) -> Dict[str, PackageBase]:
 
 async def package_search_async(packages: List[str]) -> Dict[str, PackageBase]:
     """Entrypoint for performing the search async"""
+    logger.debug("Querying main page")
     search_results = await execute_package_search(packages)
     package_defs = parsing.process_search_result(search_results)
     logger.debug("Packages found: %s", ",".join(list(package_defs.keys())))
+    logger.debug("Querying releases")
+    package_defs = _validate_packages(packages, package_defs)
+    # @TODO - This will re-run for the first variant, which already has been completed
+    _collect_package_data(package_defs)
     release_defs = await execute_release_info(package_defs)
     parsing.process_release_result(release_defs)
+    logger.debug("Querying variants")
     variant_defs = await execute_variant_info(package_defs)
     parsing.process_variant_result(variant_defs)
+    download_pages = await execute_variant_download_info(package_defs)
+    parsing.process_variant_download_result(download_pages)
     return package_defs
+
+
+async def _validate_packages(packages: List[str],  package_defs: Dict[str, PackageBase]) -> Dict[str, PackageBase]:
+    """Ensures all packages meet the criteria
+
+    :param list packages: Package names that should be an exact match
+    :param dict package_defs: High-level packages from the initial search
+    """
+    release_defs = await execute_release_info(package_defs, validate_package=True)
+    parsing.process_release_result(release_defs)
+    logger.debug("Querying variants")
+    variant_defs = await execute_variant_info(package_defs)
+    parsing.process_variant_result(variant_defs)
+    valid = {}
+    # Remove any non-requested packages
+    for package_name, package in package_defs.items():
+        version = next(package.versions)
+        arch = next(package.versions[version])
+        variant = next(package.versions[version][arch])
+        if variant.package not in packages:
+            continue
+        package.package = variant.package
+        valid[package_name] = package
+    return package
+
+
+async def _collect_package_data(package_defs: Dict[str, PackageBase]):
+    """Collect all information for the packages
+
+    :param dict package_defs: High-level packages from the initial search
+    """
+    release_defs = await execute_release_info(package_defs)
+    parsing.process_release_result(release_defs)
+    logger.debug("Querying variants")
+    variant_defs = await execute_variant_info(package_defs)
+    parsing.process_variant_result(variant_defs)
+    download_pages = await execute_variant_download_info(package_defs)
+    parsing.process_variant_download_result(download_pages)
 
 
 async def execute_package_search(packages: List[str]) -> List[str]:
@@ -76,16 +123,20 @@ async def execute_package_search(packages: List[str]) -> List[str]:
     return await _perform_search(loop, param_list)
 
 
-async def execute_release_info(packages: Dict[str, PackageBase]) -> Dict[PackageVersion, str]:
+async def execute_release_info(packages: Dict[str, PackageBase], validate_package=False) -> Dict[PackageVersion, str]:
     """Execute all requests related to the package versions
 
-    :param dict package_defs: Current found information from the initial search. It will be updated
+    :param dict packages: Current found information from the initial search. It will be updated
         in place with the release information found during the step
+    :param bool validate_package: Only query the first one to ensure the package is an exact match
     """
     releases = []
-    for info in packages.values():
-        for package_version in info.versions.values():
-            releases.append(package_version)
+    if not validate_package:
+        for info in packages.values():
+            for package_version in info.versions.values():
+                releases.append(package_version)
+    else:
+        releases.append(packages.values()[0].values()[0])
     loop = asyncio.get_running_loop()
     return await _perform_dict_lookup(loop, releases)
 
@@ -97,7 +148,17 @@ async def execute_variant_info(packages: Dict[str, PackageBase]) -> Dict[Package
             for arch in package_version.arch.values():
                 variants.extend(arch)
     loop = asyncio.get_running_loop()
-    return await _perform_dict_lookup(loop, variants)
+    return await _perform_dict_lookup(loop, variants, lookup_type="variant_info")
+
+
+async def execute_variant_download_info(packages: Dict[str, PackageBase]) -> Dict[PackageVersion, str]:
+    variants = []
+    for info in packages.values():
+        for package_version in info.versions.values():
+            for arch in package_version.arch.values():
+                variants.extend(arch)
+    loop = asyncio.get_running_loop()
+    return await _perform_dict_lookup(loop, variants, lookup_type="variant_download_page")
 
 
 async def gather_release_info(releases: List[PackageBase]) -> Tuple[PackageVersion, PackageVariant, str]:
@@ -113,7 +174,8 @@ async def _fetch_one(session, url, params):
 
 
 async def _perform_search(loop, query_params: List[str]):
-    async with aiohttp.ClientSession(loop=loop) as session:
+    connector = aiohttp.TCPConnector(limit_per_host=NUM_REQS)
+    async with aiohttp.ClientSession(loop=loop, connector=connector) as session:
         required_urls = [_fetch_one(session, QUERY_URL, param) for param in query_params]
         logger.info("About to query %s packages", len(required_urls))
         results = await asyncio.gather(
@@ -123,7 +185,7 @@ async def _perform_search(loop, query_params: List[str]):
         return results
 
 
-async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, PackageVariant]]):
+async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, PackageVariant]], lookup_type=None):
     if len(requests) == 0:
         return []
     if type(requests[0]) == PackageVersion:
@@ -131,11 +193,12 @@ async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, Packag
         url_attr = "link"
     else:
         identifier = "variants"
-        url_attr = "download_page"
-    async with aiohttp.ClientSession(loop=loop) as session:
+    connector = aiohttp.TCPConnector(limit_per_host=NUM_REQS)
+    async with aiohttp.ClientSession(loop=loop, connector=connector) as session:
         tasks = {}
         logger.info("About to query %s %s", len(requests), identifier)
         for request in requests:
+            logger.debug("Adding the URL %s", getattr(request, url_attr))
             tasks[request] = _fetch_one(session, getattr(request, url_attr), {})
         results = await gather_from_dict(tasks)
         return results

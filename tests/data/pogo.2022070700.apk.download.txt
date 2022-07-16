@@ -1,0 +1,11 @@
+<script>
+    var tabadcode = {};
+    APKM.docReady(function(){
+        document.querySelector('#filedownload').submit();
+    });
+</script>
+<form id="filedownload" method="GET" action="/wp-content/themes/APKMirror/download.php">
+<input type="hidden" name="id" value="3692376" />
+<input type="hidden" name="key" value="71a5c3c608d755126c1c3081dd148aadfabc6b35" />
+<input type="hidden" name="forcebaseapk" value="true" />
+</form>

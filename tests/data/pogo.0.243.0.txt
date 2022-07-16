@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" />
-<meta name="theme-color" content="#FF8B14">
+<meta name="theme-color" content="#e4381c">
 <script>
             window.googlefc=window.googlefc||{},window.googlefc.ccpa=window.googlefc.ccpa||{},window.googlefc.callbackQueue=window.googlefc.callbackQueue||[],googlefc.ccpa.overrideDnsLink=!0;const ccpaCompletionCallback=e=>{e&&(document.querySelector("#apkm_consent_holder").innerHTML="")};googlefc.callbackQueue.push({CONSENT_DATA_READY:()=>{googlefc.getConsentStatus()!=googlefc.ConsentStatusEnum.CONSENT_NOT_REQUIRED&&document.querySelector("#apkm_consent_holder").insertAdjacentHTML("beforeend",'<a href="#" onclick="googlefc.callbackQueue.push(googlefc.showRevocationMessage); return false;">Change consent | </a>')}}),googlefc.callbackQueue.push({INITIAL_CCPA_DATA_READY:()=>{googlefc.ccpa.getInitialCcpaStatus()===googlefc.ccpa.InitialCcpaStatusEnum.NOT_OPTED_OUT&&document.querySelector("#apkm_consent_holder").insertAdjacentHTML("beforeend",'<a href="#" onclick="googlefc.ccpa.openConfirmationDialog(ccpaCompletionCallback); return false;">Do Not Sell My Personal Information | </a>')}});            (function(){/*
     Copyright The Closure Library Authors.
@@ -27,18 +27,24 @@
 <!--[if lt IE 9]>
     <script src="/wp-content/themes/APKMirror/js/html5.js"></script>
     <![endif]-->
-<meta name='robots' content='noindex, follow' />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <script type="text/javascript">var ai_ignore_iframe_ids;void 0!==ai_ignore_iframe_ids&&ai_ignore_iframe_ids.constructor===Array?ai_ignore_iframe_ids.push("dsq-app*"):ai_ignore_iframe_ids=["dsq-app*"];let APKM=function(){let e=/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),o=!1;function i(e){return document.querySelectorAll(e)}function d(e){return i(e)[0]}function n(e){"complete"===document.readyState||"loading"!==document.readyState&&!document.documentElement.doScroll?e():document.addEventListener("DOMContentLoaded",e)}function s(e,t=2){return!!(e.offsetHeight>t||e.getClientRects().length>t)}function r(e,t,a){return new CustomEvent(e+".bs."+t,{cancelable:!0,bubbles:!0,relatedTarget:a})}function u(e){if(this)return this.dispatchEvent(e)}let l=function(){let t=document.createElement("div"),o=null;function i(e){o&&n(o),document.body.dataset.originalPadding=parseInt(getComputedStyle(document.body).paddingRight,10),u.call(e,r("show","modal")),e.addEventListener("transitionend",()=>{u.call(e,r("shown","modal"))},{once:!0}),e.addEventListener("click",a,!1),document.body.appendChild(t),document.body.style.paddingRight=document.body.dataset.originalPadding+function(){const e=document.createElement("div"),t=(e.style.visibility="hidden",e.style.overflow="scroll",document.body.appendChild(e),document.createElement("div")),a=(e.appendChild(t),e.offsetWidth-t.offsetWidth);return e.parentNode.removeChild(e),a}()+"px",document.body.classList.add("modal-open"),document.body.classList.add("apkm-modal-open"),e.classList.add("in"),e.offsetWidth,e.classList.add("shown"),e.setAttribute("aria-hidden",!1),o=e}function n(e){e&&u.call(e,r("hide","modal"))&&(o=null,e.removeEventListener("click",a,!1),document.body.style.paddingRight=document.body.dataset.originalPadding+"px",document.body.classList.remove("modal-open"),document.body.classList.remove("apkm-modal-open"),e.classList.remove("in"),e.classList.remove("shown"),e.setAttribute("aria-hidden",!0),t.remove())}function a(a){if(a&&("hashchange"==a.type&&(o?n(o):e(a)),"click"==a.type)){let e=a.target,t="modal"==e.getAttribute("data-dismiss")||e.closest('[data-dismiss="modal"]')||!1;!t&&e!=o||(a.preventDefault(),n(o),history.back())}}function e(t){var a=window.location.hash;if(a){let e=d(a);void 0===e||e.classList.contains("modal-disable-hashloading")||e&&e.classList.contains("modal")&&(t||(history.replaceState("",document.title,window.location.pathname+window.location.search),history.pushState("",document.title,window.location.pathname+window.location.search+a)),i(e))}}return t.classList.add("modal-backdrop"),window.addEventListener("hashchange",a,!1),document.addEventListener("keydown",function(e){}),document.addEventListener("keydown",function(e){"input"!==e.target.tagName.toLowerCase()&&"textarea"!==e.target.tagName.toLowerCase()&&o&&27===e.which&&history.back()},!1),{hide:n,showFromHash:e,showFromAction:function(e,t){t&&t.preventDefault(),t=e.id||"APKModal",history.pushState("",document.title,window.location.pathname+window.location.search+"#"+t),i(e)}}}(),c=function(){let a=document.createElement("div"),o='[data-toggle="dropdown"]';function i(e){return d(this.dataset.target||!!this.getAttribute("href")&&this.getAttribute("href").replace(/.*(?=#[^\s]*$)/,""))||this.parentNode}function n(e){a.remove();let t=document.querySelectorAll(o);t.forEach(function(e){let t=i.call(e);t&&t.classList.contains("open")&&u.call(t,r("hide","dropdown"))&&(e.setAttribute("aria-expanded","false"),t.classList.remove("open"),u.call(t,r("hidden","dropdown")))})}return a.classList.add("dropdown-backdrop"),{toggle:function(e){if(void 0===this.classList||!this.classList.contains("disabled")&&!this.hasAttribute("disabled")){let e=i.call(this),t=e.classList.contains("open");if(n(),!t){if("ontouchstart"in document.documentElement&&!e.closest(".navbar-nav")&&this.parentNode.appendChild(a),!u.call(e,r("show","dropdown")))return;this.setAttribute("aria-expanded","true"),e.classList.add("open"),u.call(e,r("shown","dropdown"))}return!1}},clearDropdowns:n}}(),h=function(){let l={};function a(o){let i=this,n=i.closest("ul:not(.dropdown-menu)"),s=d(i.dataset.target||i.getAttribute("href").replace(/.*(?=#[^\s]*$)/,""));if(s&&("li"!==i.parentNode.tagName.toLowerCase()||!i.parentNode.classList.contains("active"))){if(n.classList.contains("sticky-tabs")&&history&&history.pushState&&window.location.hash!=s.id&&(!o||"hashchange"!=o.type)&&history.pushState(null,null,window.location.pathname+window.location.search+"#"+s.id),"undefined"!=typeof tabadcode&&!(s.id in l)&&s.querySelector(".gooWindow")){s.querySelector(".gooWindow").innerHTML=tabadcode[s.id],l[s.id]=!0;try{(adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}}let e=n.querySelector(".active a"),t=u.call(e,r("hide","tab",i)),a=u.call(i,r("show","tab",e));t&&a&&(c(i.closest("li"),n),c(s,s.parentNode,function(){u.call(e,r("hidden","tab")),u.call(i,r("shown","tab"))}))}}function c(t,e,a){let o=e.querySelector(":scope > .active"),i=(o.classList.remove("active"),o.querySelectorAll(":scope > .dropdown-menu > .active")),n=(i.forEach(function(e){e.classList.remove("active")}),o.querySelectorAll('[data-toggle="tab"]')),s=(n.forEach(function(e){e.setAttribute("aria-expanded","false")}),t.classList.add("active"),t.querySelectorAll('[data-toggle="tab"]'));if(s.forEach(function(e){e.setAttribute("aria-expanded","true")}),t.closest(".dropdown-menu")){t.closest("li.dropdown").classList.add("active");let e=t.querySelectorAll('[data-toggle="tab"]');e.forEach(function(e){e.setAttribute("aria-expanded","true")})}a&&a()}function e(e){var t=window.location.hash,t=d('[data-toggle="tab"][href="'+t+'"],[data-toggle="pill"][href="'+t+'"]');t&&a.call(t,e)}return window.addEventListener("hashchange",e,!1),{show:a,showFromHash:e}}();function m(e=!1){let t=d("html"),a=localStorage.theme;if(e){switch(a){case"dark":a="light";break;case"light":a="";break;default:a="dark"}localStorage.theme=a}switch(a){case"dark":t.classList.add("dark"),t.classList.remove("auto-theme");break;case"light":t.classList.remove("dark"),t.classList.remove("auto-theme");break;default:window.matchMedia("(prefers-color-scheme: dark)").matches?t.classList.add("dark"):t.classList.remove("dark"),t.classList.add("auto-theme")}try{DISQUS.reset({reload:!0})}catch(e){}}function f(){let e=d(".advanced-search-container");e.classList.contains("hidden")?(e.classList.remove("hidden"),d("#advanced-searched-caret").classList.add("dropup")):(e.classList.add("hidden"),d("#advanced-searched-caret").classList.remove("dropup"))}return window.matchMedia&&(m(),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{localStorage.theme||m()})),document.addEventListener("click",function(t){let a=t.target;var i=a.hasAttribute("data-apkm-click-track")?a:a.closest("[data-apkm-click-track]")||!1,i=(i&&!function e(t,a=!1){"function"==typeof ga&&(ga("send",t),a=!0),"function"==typeof gtag&&(gtag("event",t.eventAction,{event_category:t.eventCategory,event_label:t.eventLabel}),a=!0),a||o||n(function(){e(t,!0)})}({hitType:"event",eventAction:"click",eventCategory:i.dataset.apkmTrackCategory??"APKM tracking",eventLabel:i.dataset.apkmClickTrack}),a.getAttribute("data-update-theme")?a:a.closest("[data-update-theme]")||!1),i=(i&&m(!0),a.classList.contains("infoLink")?a:a.closest(".infoLink")||!1);if(i){let e=i.closest(".appRow").nextElementSibling,t=e.classList.contains("activated");document.querySelectorAll(".infoSlide").forEach(function(e){e.classList.remove("activated"),e.style.height=""}),document.querySelectorAll("svg.info-icon").forEach(function(e){e.style.color="",e.classList.remove("accent_color")}),t||(e.classList.add("activated"),e.style.height=e.scrollHeight+"px",i.querySelector(".info-icon").classList.add("accent_color"))}else{i=a.classList.contains("infoDevLink")?a:a.closest(".infoDevLink")||!1;if(i){let e=i.closest(".appRow").nextElementSibling,t=i.classList.contains("activated");document.querySelectorAll(".infoDevSlide, .infoSlide, .infoDevLink").forEach(function(e){e.classList.remove("activated"),e.style.height=""}),t||(i.classList.add("activated"),e.style.height=e.scrollHeight+"px")}else{i=a.classList.contains("search-filter-button")?a:a.closest(".search-filter-button")||!1;if(i)d("#apkm-search-filters")?f():(d("#search-form").insertAdjacentHTML("beforeend",'<input type="hidden" name="filter" value="true" /> '),d("#apkm-search-searchtype").value="apk",document.forms["search-form"].submit());else if("apkm-advanced-search"==a.id?a:a.closest("#apkm-advanced-search")||!1)f();else{i=a.classList.contains("uploadButton")?a:a.closest(".uploadButton")||!1;if(i)return i=i,void(e?location.href=i.dataset.url:l.showFromAction(d("#uploadAPK")));let o="slide"==a.getAttribute("data-toggle")?a:a.closest('[data-toggle="slide"]')||!1;if(o){let e=o.hasAttribute("href")&&o.getAttribute("href")||o.querySelector("a")&&o.querySelector("a").hasAttribute("href")&&o.querySelector("a").getAttribute("href")||!1;e&&history.replaceState&&(t.preventDefault(),window.location.hash?window.history.replaceState(null,null,"#"+e.split("#")[1]):window.history.pushState(null,null,"#"+e.split("#")[1]));{i=o;let e=i.closest(".slide-container").querySelector(".slide-item"),t=i.classList.contains("activated"),a=void 0!==i.dataset.stayOpen;e&&(a||document.querySelectorAll('.slide-container .slide-item, [data-toggle="slide"]').forEach(function(e){e.classList.remove("activated"),e.style.height=""}),t?a&&(i.classList.remove("activated"),e.style.height=""):(i.classList.add("activated"),e.style.height=e.scrollHeight+"px"))}}else{let e="modal"==a.getAttribute("data-toggle")?a:a.closest('[data-toggle="modal"]')||!1;if(e){i=e.dataset.target||!!e.getAttribute("href")&&e.getAttribute("href").replace(/.*(?=#[^\s]*$)/,"");if(i)return void l.showFromAction(d(i),t)}i="dropdown"==a.getAttribute("data-toggle")?a:a.closest('[data-toggle="dropdown"]')||!1;i?c.toggle.call(i):(a.getAttribute("data-toggle")||c.clearDropdowns(),(i="tab"==a.getAttribute("data-toggle")||"pill"==a.getAttribute("data-toggle")?a:a.closest('[data-toggle="tab"]')||a.closest('[data-toggle="pill"]')||!1)&&(t.preventDefault(),h.show.call(i)))}}}}},!1),n(function(){o=!0,h.showFromHash(),l.showFromHash();let t=window.location.hash;if(t){let e=d('[name="'+t.replace("#","")+'"]');e&&e.click()}let e=d("#search-form"),a=(e&&e.addEventListener("submit",function(t){if(Math.max(document.documentElement.clientWidth||0,window.innerWidth||0)<992){let e=d(".searchbox-parent");if(!e.classList.contains("open"))return t.preventDefault(),e.classList.add("open"),e.querySelector(".searchbox").focus(),!1}if(d("#apkm-search-filters"))return t.preventDefault(),d("#apply-search-form").click(),!1}),i(".apkm-timed-slider"));a&&a.forEach(function(a){let o=a.id||"apkm-timed-slider",e=parseInt(localStorage.getItem(o)),t=(new Date).getTime()/1e3,i=parseInt(a.getAttribute("data-ttl")||2592e3);if(!e||e+i<t){let e=a.querySelectorAll(".close, a");a.classList.remove("hidden"),a.classList.add("show"),e.forEach(function(t){t.addEventListener("click",function(e){t.classList.contains("close")&&e.preventDefault(),localStorage.setItem(o,(new Date).getTime()/1e3),a.remove()})})}})}),{docReady:n,rT:function(e,t){let a=Math.floor(Date.now()/1e3),o,i=setInterval(function(){if(0==(o=t-Math.floor(Math.floor(Date.now()/1e3)-a))||o<0)return e(0),void clearInterval(i);e(o)},1e3)},visible:s,visibleEl:function(e,a){let o=0;return document.querySelectorAll(e).forEach(function(e,t){s(e,a)&&(o+=1)}),o},loadJs:function(i,n=!1){return new Promise(function(e,t){let a=document,o=a.createElement("script");o.src=i,0!=n&&(o.id=n),o.onerror=function(e){t(e,o)},o.onload=function(){e(!0)},(a.head||a.body).appendChild(o)})},modalShowFromAction:l.showFromAction,qs:d,isMobile:e}}();</script>
 
-<title>You searched for com.nianticlabs.pokemongo - APKMirror</title>
-<meta name="description" content="You searched for com.nianticlabs.pokemongo - APKMirror Free and safe Android APK downloads" />
+<title>Pokémon GO 0.243.0 APK Download by Niantic, Inc. - APKMirror</title>
+<meta name="description" content="Pokémon GO 0.243.0 APK Download by Niantic, Inc. - APKMirror Free and safe Android APK downloads" />
+<link rel="canonical" href="https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="You searched for com.nianticlabs.pokemongo - APKMirror" />
-<meta property="og:url" content="/search/com.nianticlabs.pokemongo/" />
+<meta property="og:title" content="Pokémon GO 0.243.0 APK Download by Niantic, Inc. - APKMirror" />
+<meta property="og:url" content="https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/" />
 <meta property="og:site_name" content="APKMirror" />
+<meta property="article:publisher" content="https://www.facebook.com/apkmirror" />
+<meta property="article:modified_time" content="2022-07-12T22:26:08+00:00" />
+<meta property="og:image" content="https://www.apkmirror.com/wp-content/uploads/2022/07/00/62cdf4c110cb2-384x384.png" />
+<meta property="og:image:width" content="384" />
+<meta property="og:image:height" content="384" />
+<meta property="og:image:type" content="image/png" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="You searched for com.nianticlabs.pokemongo - APKMirror" />
 <meta name="twitter:site" content="@APKMirror" />
 <script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
@@ -88,32 +94,43 @@
 	            "inLanguage": "en-US"
 	        },
 	        {
-	            "@type": [
-	                "CollectionPage",
-	                "SearchResultsPage"
-	            ],
-	            "@id": "#webpage",
-	            "url": "https://www.apkmirror.com/?s=com.nianticlabs.pokemongo",
-	            "name": "You searched for com.nianticlabs.pokemongo - APKMirror",
+	            "@type": "ImageObject",
+	            "@id": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/#primaryimage",
+	            "inLanguage": "en-US",
+	            "url": "https://www.apkmirror.com/wp-content/uploads/2022/07/00/62cdf4c110cb2.png",
+	            "contentUrl": "https://www.apkmirror.com/wp-content/uploads/2022/07/00/62cdf4c110cb2.png",
+	            "width": 512,
+	            "height": 512
+	        },
+	        {
+	            "@type": "WebPage",
+	            "@id": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/#webpage",
+	            "url": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/",
+	            "name": "Pokémon GO 0.243.0 - APKMirror",
 	            "isPartOf": {
 	                "@id": "https://www.apkmirror.com/#website"
 	            },
+	            "primaryImageOfPage": {
+	                "@id": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/#primaryimage"
+	            },
+	            "datePublished": "2022-07-12T22:26:07+00:00",
+	            "dateModified": "2022-07-12T22:26:08+00:00",
 	            "breadcrumb": {
-	                "@id": "#breadcrumb"
+	                "@id": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/#breadcrumb"
 	            },
 	            "inLanguage": "en-US",
 	            "potentialAction": [
 	                {
 	                    "@type": "ReadAction",
 	                    "target": [
-	                        "https://www.apkmirror.com/?s=com.nianticlabs.pokemongo"
+	                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/"
 	                    ]
 	                }
 	            ]
 	        },
 	        {
 	            "@type": "BreadcrumbList",
-	            "@id": "#breadcrumb",
+	            "@id": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/#breadcrumb",
 	            "itemListElement": [
 	                {
 	                    "@type": "ListItem",
@@ -124,7 +141,19 @@
 	                {
 	                    "@type": "ListItem",
 	                    "position": 2,
-	                    "name": "com.nianticlabs.pokemongo"
+	                    "name": "Niantic, Inc.",
+	                    "item": "https://www.apkmirror.com/apk/niantic-inc/"
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 3,
+	                    "name": "Pokémon GO",
+	                    "item": "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/"
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 4,
+	                    "name": "Pokémon GO 0.243.0"
 	                }
 	            ]
 	        }
@@ -134,8 +163,6 @@
 <link rel='dns-prefetch' href='//www.googletagmanager.com' />
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='multiselect-css-async-css' href='https://www.apkmirror.com/wp-content/plugins/AppManager/css/vanillaSelectBox.css?ver=1614957068' type='text/css' media='all' />
-<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='nouislider-css-async-css' href='https://www.apkmirror.com/wp-content/plugins/AppManager/css/nouislider.css?ver=1618517004' type='text/css' media='all' />
 <link rel='stylesheet' id='APKMirror-style-css' href='https://www.apkmirror.com/wp-content/themes/APKMirror/style.min.css?ver=1657837443' type='text/css' media='all' />
 <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='googleFonts-async-css' href='//fonts.googleapis.com/css?family=Roboto%3A100%2C300%2C400%2C500&#038;display=swap&#038;ver=6.0.1' type='text/css' media='all' />
 
@@ -152,6 +179,9 @@ gtag("config", "G-YYKGHJGKP4");
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/wordpress/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wordpress/wp-includes/wlwmanifest.xml" />
 <meta name="generator" content="WordPress 6.0.1" />
+<link rel='shortlink' href='/?p=3692378' />
+<link rel="alternate" type="application/json+oembed" href="https://www.apkmirror.com/wp-json/oembed/1.0/embed?url=%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.apkmirror.com/wp-json/oembed/1.0/embed?url=%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F&#038;format=xml" />
 <script>var apkm_disqus_shortname = "apkmirror";</script> <script type="text/javascript">
         var ajaxurl = '/wordpress/wp-admin/admin-ajax.php';
     </script>
@@ -180,7 +210,9 @@ gtag("config", "G-YYKGHJGKP4");
         interstitials: {google_ad_channel: '4713454888'}
     });
 </script>
- <link rel="alternate" type="application/rss+xml" title="APKMirror Main Feed" href="https://www.apkmirror.com/feed/" />
+ <link rel="alternate" type="application/rss+xml" title="APKMirror Pokémon GO App Feed" href="/apk/niantic-inc/pokemon-go/feed/" />
+<link rel="alternate" type="application/rss+xml" title="APKMirror Niantic, Inc. Dev Feed" href="/apk/niantic-inc/feed/" />
+<link rel="alternate" type="application/rss+xml" title="APKMirror Main Feed" href="https://www.apkmirror.com/feed/" />
 <link rel="manifest" href="https://www.apkmirror.com/wp-content/themes/APKMirror/manifest.json?cachebust=4" />
 <link rel="shortcut icon" href="https://www.apkmirror.com/wp-content/themes/APKMirror/images/favicon.ico?v=2" />
 <link href="https://www.apkmirror.com/wp-content/themes/APKMirror/images/favicon.png?v=2" rel="icon" sizes="64x64">
@@ -212,15 +244,15 @@ gtag("config", "G-YYKGHJGKP4");
         .accent_color:hover,
         .accent_color:active,
         .accent_color:focus {
-            color: #FF8B14 !important;
+            color: #e4381c !important;
         }
 
         .accent_bg {
-            background-color: #FF8B14 !important;
+            background-color: #e4381c !important;
         }
 
         .accent_border {
-            border-color: #FF8B14 !important;
+            border-color: #e4381c !important;
         }
 
             </style>
@@ -231,28 +263,15 @@ gtag("config", "G-YYKGHJGKP4");
 <meta name="monetization" content="$ilp.uphold.com/QYAfJw3AKBgA">
 
 </head>
-<body class="archive search search-no-results post-type-archive post-type-archive-app_release single-author sidebar" role="document">
+<body class="app_release-template-default single single-app_release postid-3692378 single-author sidebar" role="document">
 <div id="wrap">
 <div id="masthead" class="header">
 <div role="banner" class="accent_bg site-header-contents header-nav">
 <div class="container-fluid set-max-width">
 
-<div class="visible-md-block visible-lg-block siteTitleBar v-middle desktopTitle fontWhite noHover">
-<a class="fontWhite noHover" href="https://www.apkmirror.com/">
-<img width="100" height="52" src="https://www.apkmirror.com/wp-content/themes/APKMirror/images/logov2.png" class="header-image apkm-logo-image" alt="APKMirror" />
-</a>
-<div>
-<a class="site-title fontWhite noHover" href="https://www.apkmirror.com/" title="APKMirror" rel="home">
-APKMirror </a>
-<div class="site-sub-title">Free and safe Android APK downloads</div>
-</div>
-</div>
-
 
 <div class="d-flex site-toolbar p-relative">
-<div class="header-nav-menu f-grow col-padding ">
-<nav class="navbar navbar-default" role="navigation">
-<div id="breadcrumbs"><a class="withoutripple " href="/">Home</a> <svg class="icon chevron-icon "><use xlink:href="#apkm-icon-chevron"></use></svg> <span class="active ">Search</span></div> </nav>
+<div class="header-nav-menu f-grow col-padding header-alternate">
 <div id="mobile-slide-menu">
 <div id="mobile-slide-header" class="accent_bg site-info hidden-lg hidden-md d-flex f-start col-padding">
 <a class="fontWhite mobile-slide-logo noHover" href="https://www.apkmirror.com/">
@@ -270,7 +289,7 @@ APKMirror </a>
 </ul></div> </nav>
 </div>
 </div>
-<div class="site-info d-flex col-padding hidden-lg hidden-md">
+<div class="site-info d-flex col-padding ">
 <button type="button" id="hamburgerMenu" class="hamburgerButton hidden-lg hidden-md" data-toggle="dropdown" data-target="#mobile-slide-menu">
 <svg class="clickable icon hamburger-icon">
 <use xlink:href="#apkm-icon-hamburger"></use>
@@ -282,7 +301,7 @@ APKMirror </a>
 <a class="fontWhite noHover" href="https://www.apkmirror.com/" title="APKMirror" rel="home">
 APKMirror </a>
 </div>
-<div class="search-bar d-flex f-nowrap f-end f-md-33 flex-xs-grow col-padding">
+<div class="search-bar d-flex f-nowrap f-end f-grow col-padding">
 
 <div class="searchbox-parent accent_bg">
 <form action="/" method="get" id="search-form">
@@ -291,7 +310,7 @@ APKMirror </a>
 <use xlink:href="#apkm-icon-search"></use>
 </svg>
 </button>
-<input type="text" name="s" placeholder="Search" value="com.nianticlabs.pokemongo" class="searchbox" />
+<input type="text" name="s" placeholder="Search" value="" class="searchbox" />
 <button type="button" class="search-filter-button">
 <svg class="clickable icon search-icon">
 <use xlink:href="#apkm-icon-searchfilter"></use>
@@ -308,7 +327,7 @@ APKMirror </a>
 <use xlink:href="#apkm-icon-upload"></use>
 </svg>
 </button>
- <div class="dropdown dropdown-premium button">
+<div class="dropdown dropdown-premium button">
 <span class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 <svg class="clickable icon icon-user">
 <use xlink:href="#apkm-icon-user"></use>
@@ -322,14 +341,23 @@ APKMirror </a>
 </div>
 </div>
 </div>
+<header class="site-header-contents">
+<div class="container-fluid set-max-width">
+
+<div class="siteTitleBar d-flex f-nowrap">
+<div class="p-relative icon-container"><img class="ellipsisText" style="width:96px; height:96px;" width="96" height="96" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F00%2F62cdf4c110cb2.png&w=96&h=96&q=100" alt="Pokémon GO 0.243.0"><span class="bubble "><a href="#disqus_thread" data-disqus-identifier="3692378 https://www.apkmirror.com/?post_type=app_release&#038;p=3692378" title="View comments"></a></span></div> <div class="f-grow">
+<h1 title="Pokémon GO 0.243.0" class="marginZero wrapText app-title fontBlack noHover">Pokémon GO 0.243.0</h1><h3 title="By &lt;a href=&quot;/apk/niantic-inc&quot;&gt;Niantic, Inc.&lt;/a&gt;" class="marginZero dev-title wrapText fontBlack">By <a href="/apk/niantic-inc">Niantic, Inc.</a></h3> </div>
+</div>
+<nav class="navbar navbar-default col-padding f-100" role="navigation"><div class="accent_color" id="breadcrumbs"><a class="withoutripple accent_color" href="/apk/niantic-inc/">Niantic, Inc.</a> <svg class="icon chevron-icon"><use xlink:href="#apkm-icon-chevron"></use></svg> <a class="withoutripple   accent_color" href="/apk/niantic-inc/pokemon-go/">Pokémon GO</a> <svg class="icon chevron-icon"><use xlink:href="#apkm-icon-chevron"></use></svg> <span class="active accent_color">0.243.0</span> </div></nav> </div>
+</header>
 </div>
 </div>
 <script type="text/javascript">
-        /**formData.append("_wpnonce", 'ce89bf32f9');
+        /**formData.append("_wpnonce", '08f7fa7d3c');
     */
         let apk_upload_page = false,
             apk_maxFiles = 25,
-            apk_upload_wpnonce = 'ce89bf32f9',
+            apk_upload_wpnonce = '08f7fa7d3c',
             apk_tinymceUrl = '/wordpress/wp-includes/js/tinymce/tinymce.min.js?ver=6.0.1',
             apk_apkuploaderJS = 'https://www.apkmirror.com/wp-content/plugins/UploadManager/inc/js/apkuploader.min.js?1653427512',
             apk_md5Url = 'https://www.apkmirror.com/wp-content/plugins/UploadManager/inc/js/md5.js?1593714674',
@@ -342,175 +370,293 @@ APKMirror </a>
         !function(){let a,o=document.body,n=!1,e=!1,t=!1;async function r(){e||(a=APKM.loadJs(apk_apkuploaderJS),e=!0)}async function d(e){t||(console.log("handleStart",e),r(),apk_upload_page||((n=n||document.querySelector("#uploadAPK"))||APKM.docReady(function(){(n=n||document.querySelector("#uploadAPK"))&&!n.classList.contains("in")&&APKM.modalShowFromAction(n)}),n&&!n.classList.contains("in")&&APKM.modalShowFromAction(n)),o.classList.add("dz-drag-hover"),t=!0)}function l(e){console.log("handleEnd",e),o.classList.remove("dz-drag-hover"),t=!1}function c(e){e.preventDefault(),e.stopPropagation()}apk_upload_page?r():APKM.docReady(function(){(n=n||document.querySelector("#uploadAPK")).classList.contains("in")?r():n.addEventListener("show.bs.modal",function(){r()},{once:!0})}),APKM.isMobile||(["dragenter","dragover","dragleave","drop"].forEach(e=>{console.log("preventDefaults attached",e),o.addEventListener(e,c,!1)}),["dragenter","dragover"].forEach(e=>{console.log("handleStart attached",e),o.addEventListener(e,d,!1)}),["dragleave","drop"].forEach(e=>{console.log("handleEnd attached",e),o.addEventListener(e,l,!1)}),o.addEventListener("drop",async function(e){console.log("handleDrop",e),r(),await a;var o=e.dataTransfer;if(o&&o.items)try{var n=o.items;for(let a=0;a<n.length;a++){let e=n[a],o=e.webkitGetAsEntry();o.isDirectory?APKUploader.addDirectory(o):o.isFile&&null!=e.getAsFile&&APKUploader.checkFile(e.getAsFile())}return}catch(e){console.error?console.error(e,e.stack):console.log(e)}o.files&&APKUploader.handleFiles(e.dataTransfer.files)},!1))}();    </script>
 <div id="main" class="content">
 <div class="container-fluid set-max-width d-flex f-a-start">
-<div class="modal fade" id="searchtips" tabindex="-1" role="dialog" aria-labelledby="searchtips" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<h2 class="modal-title fontBlack">Search Tips</h2>
-</div>
-<div class="modal-body">
-<div class="indented-text">
-<p class="card-text"><strong>Wildcards</strong> &mdash; By default, a wildcard asterisk character (<code>*</code>) is automatically appended to each search term. You can add <code>*</code> at the beginning or in the middle of a term yourself:<br>
-<code style="margin-left: 8px;">Google</code> would match <code>Google</code> or <code>Googles</code><br>
-<code style="margin-left: 8px;">*oogle</code> would match <code>Google</code> or <code>Scroogles</code><br>
-<code style="margin-left: 8px;">G*le</code> would match <code>Google</code> or <code>Goooooooooogle</code>
-</p>
-<p class="card-text"><strong>Negation</strong> &mdash; By prepending a minus character (<code>-</code>) in front of a search term, you ensure that the search results do not contain that term:<br>
-<code style="margin-left: 8px;">Google Maps -Auto</code> will search for all instances of <code>Google* Maps*</code> that don't contain <code>Auto</code>
-</p>
-<p class="card-text"><strong>Literal phrases</strong> &mdash; By surrounding a term or multiple terms with quotation marks (<code>&quot;</code>), you ensure that the order and grouping of terms are preserved, and no wildcards are automatically added to the end of each term:<br>
-<code style="margin-left: 8px;">&quot;Google Photos&quot; 8.*</code><br>
-<code style="margin-left: 8px;">Xfinity &quot;xfi&quot;</code>
-</p>
-<p class="card-text"><strong>Combinations</strong> &mdash; You can combine the techniques above, such as mixing negation and quotation marks:<br>
-<code style="margin-left: 8px;">*oogle Play Services -&quot;12.12&quot;</code>
-</p>
-<p>&nbsp;</p>
-</div>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-flat" data-dismiss="modal">Got It!</button>
-</div>
-</div>
-</div>
-</div>
-<div id="content" class="f-md-66 col-padding content-area search-area" role="main">
-<div class='ains ains-43 ains-apkm_search_page_top ai-track' data-ai='WzQzLDAsImFwa21fc2VhcmNoX3BhZ2VfdG9wIiwiIiwxXQ=='>
+<div id="content" class="f-md-66 col-padding content-area" role="main">
+<div class='ains ains-24 ains-apkm_release_page_top ai-track' data-ai='WzI0LDAsImFwa21fcmVsZWFzZV9wYWdlX3RvcCIsIiIsMV0='>
 <span class="advertisement-text">Advertisement</span><a href="/premium" class="advertisement-text membership-text" title="APKMirror Premium" data-google-vignette="false"><span>Remove ads, dark theme, and more with <img src="/wp-content/themes/APKMirror/images/apple-touch-icon-57x57.png" alt="APKM Premium" width="18" height="18" /> Premium</span></a>
 <div class="gooWidget google-ad-leaderboard">
 
-<ins class="adsbygoogle adslot" style="display:block" data-ad-client="ca-pub-8776668743582988" data-ad-slot="4642100482"></ins>
+<ins class="adsbygoogle adslot" style="display:block" data-ad-client="ca-pub-8776668743582988" data-ad-slot="2038432885"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div></div>
+<script>
+    var tabadcode = {};
+</script>
+<div class="card-with-tabs">
+
+<div class="tab-container">
+<div class="tab-scrollable-container">
+<ul class="nav nav-tabs sticky-tabs" role="tablist">
+<li class="active"><a class="accent_border accent_color" aria-controls="whatsnew" role="tab" data-toggle="tab" href="#whatsnew">WHAT'S NEW</a></li>
+<li class="" role="tabs"><a class="accent_border accent_color" aria-controls="description" role="tab" data-toggle="tab" href="#description">DESCRIPTION</a></li>
+</ul>
+</div>
+</div>
+<div class="tab-buttons d-flex f-nowrap">
+ <div class="tab-button-positioning-left">
+<a class="accent_color accent_border play-category" href="/categories/game_adventure/">Adventure Games</a>
+<a class="accent_color accent_border play-category" href="/categories/game_action/">Action Game</a>
+<a class="accent_color accent_border play-category" href="/categories/game_casual/">Casual Games</a>
+</div>
+<div class="tab-button-positioning d-flex f-nowrap">
+<div class="dropdown">
+<a role="button" title="View QR code" alt="View QR code" class="accent_color hidden-xs tab-button dropdown-toggle" id="qrDropdown" data-url="https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/" data-toggle="dropdown" aria-haspopup="true" data-action="ajax_generate_qr" aria-expanded="false">
+<svg class="icon qrcode-icon">
+<use xlink:href="#apkm-icon-qrcode"></use>
+</svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" id="qrDropdownPanel" aria-labelledby="qrDropdown">
+<li><div class="showbox"><div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /></svg></div></div></li>
+</ul>
+</div>
+<div class="dropdown">
+<a role="button" title="Share on social media" alt="Share on social media" class="accent_color tab-button dropdown-toggle" id="shareDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-pubid="ra-611c3a475f93002b">
+<svg class="icon share-icon">
+<use xlink:href="#apkm-icon-share"></use>
+</svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" id="shareDropdownPanel" aria-labelledby="shareDropdown">
+<li>
+<script>
+                            // do not add track code to add this widget
+                            var addthis_config = addthis_config||{};
+                            addthis_config.data_track_addressbar = false;
+                            addthis_config.data_track_clickback = false;
+                        </script>
+<div class="showbox"><div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /></svg></div></div>
+<div class="addthis_inline_share_toolbox" data-url="https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/" data-title="Just downloaded the Pokémon GO 0.243.0 APK from @APKMirror"></div>
+<div class="share_fallback">
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.apkmirror.com%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F" target="_blank" class="facebook-color" rel="nofollow noopener"><svg class="clickable icon" aria-label="Facebook"><use xlink:href="#apkm-icon-facebook"></use></svg></a>
+<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.apkmirror.com%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F&amp;text=Just+downloaded+the+Pok%C3%A9mon+GO+0.243.0+APK+from+%40APKMirror" target="_blank" class="twitter-color" rel="nofollow noopener" aria-label="Twitter"><svg class="clickable icon"><use xlink:href="#apkm-icon-twitter"></use></svg></a>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.apkmirror.com%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F&amp;title=Just+downloaded+the+Pok%C3%A9mon+GO+0.243.0+APK+from+%40APKMirror" target="_blank" class="reddit-color" rel="nofollow noopener" aria-label="Reddit"><svg class="clickable icon"><use xlink:href="#apkm-icon-reddit"></use></svg></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.apkmirror.com%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F&amp;title=Just+downloaded+the+Pok%C3%A9mon+GO+0.243.0+APK+from+%40APKMirror" target="_blank" class="linkedin-color" rel="nofollow noopener" aria-label="Linkedin"><svg class="clickable icon"><use xlink:href="#apkm-icon-linkedin"></use></svg></a>
+<a href="https://telegram.me/share/url?url=https%3A%2F%2Fwww.apkmirror.com%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F&amp;text=Just+downloaded+the+Pok%C3%A9mon+GO+0.243.0+APK+from+%40APKMirror" target="_blank" class="telegram-color" rel="nofollow noopener" aria-label="Telegram"><svg class="clickable icon"><use xlink:href="#apkm-icon-telegram"></use></svg></a>
+<a href="whatsapp://send?text=Just+downloaded+the+Pok%C3%A9mon+GO+0.243.0+APK+from+%40APKMirror%0Ahttps%3A%2F%2Fwww.apkmirror.com%2Fapk%2Fniantic-inc%2Fpokemon-go%2Fpokemon-go-0-243-0-release%2F" target="_blank" class="whatsapp-color" rel="nofollow noopener" aria-label="Whatsapp"><svg class="clickable icon"><use xlink:href="#apkm-icon-whatsapp"></use></svg></a>
+</div>
+</li>
+</ul>
+</div>
+<a target="_blank" title="View on Play Store" alt="View on Play Store" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" class="accent_color tab-button" rel="nofollow">
+<svg class="icon playstore-icon">
+<use xlink:href="#apkm-icon-playstore"></use>
+</svg>
+</a>
+<div class="dropdown">
+<a role="button" title="View RSS feeds" alt="View RSS feeds" class="accent_color tab-button dropdown-toggle" id="rssDropdown" data-level=3 data-termid=10712 data-postid="3692378" data-type="rss" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<svg class="icon icon-rss">
+<use xlink:href="#apkm-icon-rss"></use>
+</svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-right addsmallpadding" id="rssDropdownPanel" aria-labelledby="rssDropdown">
+<li><div class="showbox"><div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /></svg></div></div></li>
+</ul>
+</div>
+<div class="dropdown">
+<a role="button" title="Subscribe via Pushbullet" alt="Subscribe via Pushbullet" class="accent_color tab-button dropdown-toggle" id="pbDropdown" data-level=3 data-termid=10712 data-postid="3692378" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<svg class="icon share-icon">
+<use xlink:href="#apkm-icon-pushbullet"></use>
+</svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-right addsmallpadding" id="pbDropdownPanel" aria-labelledby="pbDropdown">
+<li><div class="showbox"><div class="loader"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /></svg></div></div></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane fade  " id="notes">
+<div class="row">
+<script>
+                        tabadcode["notes"] = "<div class='ains ains-27 ains-apkm_release_page_notestab ai-viewport-1 ai-viewport-5 ai-track' data-ai='WzI3LDAsImFwa21fcmVsZWFzZV9wYWdlX25vdGVzdGFiIiwiIiwxXQ=='>\n<span class=\"advertisement-text\">Advertisement<\/span><a href=\"\/premium\" class=\"advertisement-text membership-text\" title=\"APKMirror Premium\" data-google-vignette=\"false\"><span>Remove ads, dark theme, and more with <img src=\"\/wp-content\/themes\/APKMirror\/images\/apple-touch-icon-57x57.png\" alt=\"APKM Premium\" width=\"18\" height=\"18\" \/> Premium<\/span><\/a>\n<div class=\"gooWidget google-ad-square-inline x-showOnTabletAndDesktop\">\n  <!-- Adsense responsive ad apkm_release_page_notestab -->\n  <ins class=\"adsbygoogle adslot\"\n    style=\"display:block\"\n    data-ad-client=\"ca-pub-8776668743582988\"\n    data-ad-slot=\"9884443287\"\n    data-ad-region=\"REGION_2\"><\/ins>\n  <script>\n    (adsbygoogle = window.adsbygoogle || []).push({});\n  <\/script>\n<\/div><\/div>\n";
+                    </script>
+<div class="gooWindow"></div>
+<div class="notes wrapText"></div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane fade in active" id="whatsnew">
+<div class="row">
+<script>
+                        tabadcode["whatsnew"] = "<div class='ains ains-28 ains-apkm_release_page_whatsnewtab ai-viewport-1 ai-viewport-5 ai-track' data-ai='WzI4LDAsImFwa21fcmVsZWFzZV9wYWdlX3doYXRzbmV3dGFiIiwiIiwxXQ=='>\n<span class=\"advertisement-text\">Advertisement<\/span><a href=\"\/premium\" class=\"advertisement-text membership-text\" title=\"APKMirror Premium\" data-google-vignette=\"false\"><span>Remove ads, dark theme, and more with <img src=\"\/wp-content\/themes\/APKMirror\/images\/apple-touch-icon-57x57.png\" alt=\"APKM Premium\" width=\"18\" height=\"18\" \/> Premium<\/span><\/a>\n<div class=\"gooWidget google-ad-square-inline x-showOnTabletAndDesktop\">\n  <!-- Adsense responsive ad apkm_release_page_whatsnewtab -->\n  <ins class=\"adsbygoogle adslot\"\n    style=\"display:block\"\n    data-ad-client=\"ca-pub-8776668743582988\"\n    data-ad-slot=\"4560240087\"\n    data-ad-region=\"REGION_2\"><\/ins>\n  <script>\n    (adsbygoogle = window.adsbygoogle || []).push({});\n  <\/script>\n<\/div><\/div>\n";
+                    </script>
+<div class='ains ains-28 ains-apkm_release_page_whatsnewtab ai-viewport-1 ai-viewport-5 ai-track' data-ai='WzI4LDAsImFwa21fcmVsZWFzZV9wYWdlX3doYXRzbmV3dGFiIiwiIiwxXQ=='>
+<span class="advertisement-text">Advertisement</span><a href="/premium" class="advertisement-text membership-text" title="APKMirror Premium" data-google-vignette="false"><span>Remove ads, dark theme, and more with <img src="/wp-content/themes/APKMirror/images/apple-touch-icon-57x57.png" alt="APKM Premium" width="18" height="18" /> Premium</span></a>
+<div class="gooWidget google-ad-square-inline x-showOnTabletAndDesktop">
+
+<ins class="adsbygoogle adslot" style="display:block" data-ad-client="ca-pub-8776668743582988" data-ad-slot="4560240087" data-ad-region="REGION_2"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div></div>
+<div class="notes wrapText"><p>Trainers, </p>
+<p>Here’s what’s new in Pokémon GO!</p>
+<p>- Pokémon GO Fest 2022: This year’s Pokémon GO Fest is bigger than ever, and we’re continuing the fun with Pokémon GO Fest: Berlin!<br />
+- A new in-game Season is here: Welcome to the Season of GO!</p>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane fade  " id="description">
+<div class="row">
+<script>
+                        tabadcode["description"] = "<div class='ains ains-29 ains-apkm_release_page_descriptiontab ai-viewport-1 ai-viewport-5 ai-track' data-ai='WzI5LDAsImFwa21fcmVsZWFzZV9wYWdlX2Rlc2NyaXB0aW9udGFiIiwiIiwxXQ=='>\n<span class=\"advertisement-text\">Advertisement<\/span><a href=\"\/premium\" class=\"advertisement-text membership-text\" title=\"APKMirror Premium\" data-google-vignette=\"false\"><span>Remove ads, dark theme, and more with <img src=\"\/wp-content\/themes\/APKMirror\/images\/apple-touch-icon-57x57.png\" alt=\"APKM Premium\" width=\"18\" height=\"18\" \/> Premium<\/span><\/a>\n<div class=\"gooWidget google-ad-square-inline x-showOnTabletAndDesktop\">\n  <!-- Adsense responsive ad apkm_release_page_descriptiontab -->\n  <ins class=\"adsbygoogle adslot\"\n    style=\"display:block\"\n    data-ad-client=\"ca-pub-8776668743582988\"\n    data-ad-slot=\"6036973287\"\n    data-ad-region=\"REGION_2\"><\/ins>\n  <script>\n    (adsbygoogle = window.adsbygoogle || []).push({});\n  <\/script>\n<\/div><\/div>\n";
+                    </script>
+<div class="gooWindow"></div>
+<div class="notes wrapText"><p>New! Now you can battle other Pokémon GO Trainers online! Try the GO Battle League today!</p>
+<p>Join Trainers across the globe who are discovering Pokémon as they explore the world around them. Pokémon GO is the global gaming sensation that has been downloaded over 1 billion times and named “Best Mobile Game” by the Game Developers Choice Awards and “Best App of the Year” by TechCrunch.<br />
+_______________</p>
+<p>Uncover the world of Pokémon: Explore and discover Pokémon wherever you are!</p>
+<p>Catch more Pokémon to complete your Pokédex!</p>
+<p>Journey alongside your Buddy Pokémon to help make your Pokémon stronger and earn rewards!</p>
+<p>Compete in epic Gym battles and...</p>
+<p>Team up with other Trainers to catch powerful Pokémon during Raid Battles!</p>
+<p>It’s time to get moving—your real-life adventures await! Let’s GO!<br />
+_______________</p>
+<p>Notes:<br />
+- This app is free-to-play and offers in-game purchases. It is optimized for smartphones, not tablets.<br />
+- Compatible with Android devices that have 2GB RAM or more and have Android Version 6.0–10.0+ installed.<br />
+- Compatibility is not guaranteed for devices without GPS capabilities or devices that are connected only to Wi-Fi networks.<br />
+- Application may not run on certain devices even if they have compatible OS versions installed.<br />
+- It is recommended to play while connected to a network in order to obtain accurate location information.<br />
+- Compatibility information may be changed at any time.<br />
+- Please visit PokemonGO.com for additional compatibility information.<br />
+- Information current as of October 20, 2020.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="downloadButtonPanel addpadding" style="display:inline-block; width:100%;">
+<div style="display: block; text-align: center;">
+<svg class="accent_color icon inline-icon apkm-icon-safe"><use xlink:href="#apkm-icon-safe"></use></svg><a class="accent_color downloadSafe" href="#safeDownload" data-toggle="modal"><span class="downloadSafeText">Verified safe to install (read more)</span></a>
+</div>
+<a type="button" class="accent_bg btn btn-flat downloadButton variantsButton" data-google-vignette="false" href="#downloads"><svg class="icon download-button-icon"><use xlink:href="#apkm-icon-download"></use></svg>See available downloads</a>
+<div style="display: block; text-align: center;">
+</div>
+</div>
+</div>
+<a name="downloads"></a>
+<div class='ains ains-26 ains-apkm_release_page_below_description_above_downloads ai-track' data-ai='WzI2LDAsImFwa21fcmVsZWFzZV9wYWdlX2JlbG93X2Rlc2NyaXB0aW9uX2Fib3ZlX2Rvd25sb2FkcyIsIiIsMV0='>
+<span class="advertisement-text">Advertisement</span><a href="/premium" class="advertisement-text membership-text" title="APKMirror Premium" data-google-vignette="false"><span>Remove ads, dark theme, and more with <img src="/wp-content/themes/APKMirror/images/apple-touch-icon-57x57.png" alt="APKM Premium" width="18" height="18" /> Premium</span></a>
+<div class="gooWidget">
+
+<ins class="adsbygoogle adslot" style="display:block" data-ad-client="ca-pub-8776668743582988" data-ad-slot="9909969683" data-ad-format="link"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 </div></div>
 <div class="listWidget">
-<span id="apkm-advanced-search">ADVANCED SEARCH <span id="advanced-searched-caret" class=""><span class="caret"></span></span></span>
-<div class="advanced-search-container hidden">
-<div>
-<div class="widgetHeader">Advanced search</div>
-<p></p>
-<form id="apkm-search-filters" method="get" action="/">
-<button type="submit" disabled style="display: none" aria-hidden="true"></button>
- <input type="hidden" id="apkm-search-filters-post_type" name="post_type" value="app_release"><input type="hidden" id="apkm-search-filters-searchtype" name="searchtype" value="apk"><input type="hidden" id="apkm-search-filters-s" name="s" value="com.nianticlabs.pokemongo"> <div class="row d-flex slider-minapi-container f-a-start">
-<div class="f-100 col-padding">
-<p style="margin-bottom: 45px;">Minimum Android version</p>
-<script type="text/javascript">
-                                    var minapi_current_min = 1;
-                                    var minapi_current_max = 999;
-                                    var minapilist_nouislider = {"min":1,"3.030303030303%":2,"6.0606060606061%":3,"9.0909090909091%":4,"12.121212121212%":5,"15.151515151515%":6,"18.181818181818%":7,"21.212121212121%":8,"24.242424242424%":9,"27.272727272727%":10,"30.30303030303%":11,"33.333333333333%":12,"36.363636363636%":13,"39.393939393939%":14,"42.424242424242%":15,"45.454545454545%":16,"48.484848484848%":17,"51.515151515152%":18,"54.545454545455%":19,"57.575757575758%":20,"60.606060606061%":21,"63.636363636364%":22,"66.666666666667%":23,"69.69696969697%":24,"72.727272727273%":25,"75.757575757576%":26,"78.787878787879%":27,"81.818181818182%":28,"84.848484848485%":29,"87.878787878788%":30,"90.909090909091%":31,"93.939393939394%":32,"96.969696969697%":33,"max":999};
-                                    var minapilist = {"1":"1.0","2":"1.1","3":"1.5","4":"1.6","5":"2.0","6":"2.0.1","7":"2.1","8":"2.2","9":"2.3","10":"2.3.4","11":"3.0","12":"3.1","13":"3.2","14":"4.0","15":"4.0.3","16":"4.1","17":"4.2","18":"4.3","19":"4.4","20":"4.4W","21":"5.0","22":"5.1","23":"6.0","24":"7.0","25":"7.1","26":"8.0","27":"8.1","28":"9.0","29":"10","30":"11","31":"12","32":"12L","33":"13","999":"+"};
-                                    var slider_pips = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,999];
-                                </script>
-<input type="hidden" id="apkm-search-minapi-min" name="minapi-min" value="" disabled>
-<input type="hidden" id="apkm-search-minapi-max" name="minapi-max" value="" disabled>
-<div id="slider-minapi"></div>
+<div class="widgetHeader">Download</div>
+<p class="indented-text">This release comes in several variants (we currently have 4). Consult our <a class="accent_color" href="/faq/">handy FAQ</a> to see which download is right for you.</p> <div style="overflow-x: auto;">
+<div class="table topmargin variants-table">
+<div class="table-row headerFont">
+<div class="table-cell rowheight addseparator expand pad">Variant</div>
+<div class="table-cell rowheight addseparator expand pad"><span class="visible-xs-inline">Arch</span><span class="hidden-xs">Architecture</span></div>
+<div class="table-cell rowheight addseparator expand pad"><span class="visible-xs-inline">Version</span><span class="hidden-xs">Minimum Version</span></div>
+<div class="table-cell rowheight addseparator expand pad"><span class="visible-xs-inline">DPI</span><span class="hidden-xs">Screen DPI</span></div>
+<div class="table-cell rowheight addseparator expand pad"></div>
+</div>
+<div class="table-row headerFont">
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-3-android-apk-download/">
+<svg class="icon tag-icon">
+<use xlink:href="#apkm-icon-tag"></use>
+</svg>
+0.243.0 </a>
+<span class="apkm-badge success" data-apkm-tooltip="APK bundle with base APK and 1 split">BUNDLE</span> <span class="apkm-badge success" data-apkm-tooltip="1 split">1 S</span> <span class="bubble p-static inlineBlock"><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-3-android-apk-download/#disqus_thread" data-disqus-identifier="3694845 http://www.apkmirror.com/?post_type=apps_post&#038;p=3694845" title="View comments"></a></span> <br><span class="colorLightBlack">2022070700</span>
+<br><span class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/12/2022 22:26 UTC">July 12, 2022</span></span>
+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">armeabi-v7a</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">Android 7.0+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">nodpi</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-3-android-apk-download/">
+<svg class="icon download-button-icon">
+<use xlink:href="#apkm-icon-download"></use>
+</svg>
+</a>
 </div>
 </div>
-<div class="row d-flex f-start">
-<div class="form-group f-md-25 f-50 col-padding">
-<label for="select-arch">Architecture</label><br>
-<select style="visibility: hidden;" id="select-arch" name="arch[]" multiple size="1">
-<option value="universal">Universal</option>
-<option value="arm64-v8a">arm64-v8a</option><option value="armeabi">armeabi</option><option value="armeabi-v7a">armeabi-v7a</option><option value="mips">mips</option><option value="mips64">mips64</option><option value="x86">x86</option><option value="x86_64">x86_64</option> </select>
+<div class="table-row headerFont">
+<div class="table-cell rowheight addseparator expand pad dowrap">
+ <a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-android-apk-download/">
+<svg class="icon tag-icon">
+<use xlink:href="#apkm-icon-tag"></use>
+</svg>
+0.243.0 </a>
+<span class="apkm-badge">APK</span> <span class="bubble p-static inlineBlock"><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-android-apk-download/#disqus_thread" data-disqus-identifier="3692376 https://www.apkmirror.com/?post_type=apps_post&#038;p=3692376" title="View comments"></a></span> <br><span class="colorLightBlack">2022070700</span>
+<br><span class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/12/2022 22:24 UTC">July 12, 2022</span></span>
 </div>
-<div class="form-group f-md-25 f-50 col-padding">
-<label for="select-dpi">DPI</label><br>
-<select style="visibility: hidden;" id="select-dpi" name="dpi[]" multiple size="2">
-<option value="120">120</option><option value="160">160</option><option value="213">213</option><option value="240">240</option><option value="280">280</option><option value="320">320</option><option value="360">360</option><option value="400">400</option><option value="420">420</option><option value="480">480</option><option value="560">560</option><option value="640">640</option><option value="nodpi">nodpi</option> </select>
- </div>
-<div class="form-group f-md-25 f-50 col-padding">
-<label for="select-cap">Capabilities</label><br>
-<select style="visibility: hidden;" id="select-cap" name="cap[]" multiple size="1">
-<option value="auto">Android Auto</option><option value="cardboard">Cardboard</option><option value="daydream">Daydream</option><option value="leanback">Android TV</option><option value="wear">Wear OS</option> </select>
-</div>
-</div>
-<div class="row d-flex">
-<div class="f-100 col-padding">
-<label class="apkm-checkbox-container">Also search descriptions, notes and changelogs
-<input type="checkbox" id="check-descriptions" name="descriptions" value="true">
-<span class="apkm-checkbox-checkmark"></span>
-</label>
+<div class="table-cell rowheight addseparator expand pad dowrap">armeabi-v7a</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">Android 7.0+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">nodpi</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-android-apk-download/">
+<svg class="icon download-button-icon">
+<use xlink:href="#apkm-icon-download"></use>
+</svg>
+</a>
 </div>
 </div>
-<div class="row d-flex">
-<div class="form-group f-100 col-padding">
-<input type="button" id="apply-search-form" class="btn btn-search" value="APPLY">
-<input type="button" id="reset-search-form" class="btn btn-default" value="RESET">
+<div class="table-row headerFont">
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-4-android-apk-download/">
+<svg class="icon tag-icon">
+<use xlink:href="#apkm-icon-tag"></use>
+</svg>
+0.243.0 </a>
+<span class="apkm-badge success" data-apkm-tooltip="APK bundle with base APK and 1 split">BUNDLE</span> <span class="apkm-badge success" data-apkm-tooltip="1 split">1 S</span> <span class="bubble p-static inlineBlock"><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-4-android-apk-download/#disqus_thread" data-disqus-identifier="3694846 http://www.apkmirror.com/?post_type=apps_post&#038;p=3694846" title="View comments"></a></span> <br><span class="colorLightBlack">2022070701</span>
+<br><span class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/12/2022 22:26 UTC">July 12, 2022</span></span>
+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">arm64-v8a</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">Android 7.0+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">nodpi</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-4-android-apk-download/">
+<svg class="icon download-button-icon">
+<use xlink:href="#apkm-icon-download"></use>
+ </svg>
+</a>
 </div>
 </div>
-</form>
+<div class="table-row headerFont">
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-2-android-apk-download/">
+<svg class="icon tag-icon">
+<use xlink:href="#apkm-icon-tag"></use>
+</svg>
+0.243.0 </a>
+<span class="apkm-badge">APK</span> <span class="bubble p-static inlineBlock"><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-2-android-apk-download/#disqus_thread" data-disqus-identifier="3692379 https://www.apkmirror.com/?post_type=apps_post&#038;p=3692379" title="View comments"></a></span> <br><span class="colorLightBlack">2022070701</span>
+<br><span class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/12/2022 22:24 UTC">July 12, 2022</span></span>
+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">arm64-v8a</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">Android 7.0+</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">nodpi</div>
+<div class="table-cell rowheight addseparator expand pad dowrap">
+<a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-2-android-apk-download/">
+<svg class="icon download-button-icon">
+<use xlink:href="#apkm-icon-download"></use>
+</svg>
+</a>
 </div>
 </div>
-<div class="widgetHeader">
-Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&#8221;</span> <a href="#searchtips" data-toggle="modal">(search tips)</a> </div>
+</div>
+</div>
+</div>
+<div class='ains ains-25 ains-apkm_release_page_middle ai-track' data-ai='WzI1LDAsImFwa21fcmVsZWFzZV9wYWdlX21pZGRsZSIsIiIsMV0='>
+<span class="advertisement-text">Advertisement</span><a href="/premium" class="advertisement-text membership-text" title="APKMirror Premium" data-google-vignette="false"><span>Remove ads, dark theme, and more with <img src="/wp-content/themes/APKMirror/images/apple-touch-icon-57x57.png" alt="APKM Premium" width="18" height="18" /> Premium</span></a>
+<div class="gooWidget">
 
-<div class="tab-container">
-<ul class="nav nav-tabs" style="float: left;">
-<li class="active"><a class="accent_color accent_border" href="?post_type=app_release&searchtype=apk&s=com.nianticlabs.pokemongo">APKS</a></li>
-<li class=""><a class="accent_color accent_border" href="?post_type=app_release&searchtype=app&s=com.nianticlabs.pokemongo">APPS</a></li>
-<li class=""><a class="accent_color accent_border" href="?post_type=app_release&searchtype=dev&s=com.nianticlabs.pokemongo">DEVS</a></li>
-</ul>
-</div>
-<div class="sortingRow">
-<div class="table-row">
-<div class="table-cell" style="width: 56px;"></div>
-<div class="table-cell">
-<a style="color: #FF8B14 !important;opacity:0.8;font-size: 12px;font-weight:  500;" href="?post_type=app_release&searchtype=apk&sortby=name&sort=asc&s=com.nianticlabs.pokemongo">NAME</a>
-</div>
-<div class="table-cell" style="width: 150px; text-align: right; padding-right: 8px;">
-<a style="color: #FF8B14 !important;opacity:0.8;font-size: 12px;font-weight: 500;" href="?post_type=app_release&searchtype=apk&sortby=date&sort=asc&s=com.nianticlabs.pokemongo">LAST UPDATED<span class="caret"></span></a>
-</div>
-<div class="table-cell hidden-xs" style="width: 60px;"></div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F64%2F62d244a519463.png&w=32&h=32&q=100" alt="Pokémon GO (Samsung Galaxy Store) 0.243.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-243-0-release/#disqus_thread" data-disqus-identifier="3708240 https://www.apkmirror.com/?post_type=app_release&#038;p=3708240" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<div style="padding-top: 4px;">
-<h5 title="Pokémon GO (Samsung Galaxy Store) 0.243.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-243-0-release/">Pokémon GO (Samsung Galaxy Store) 0.243.0</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> </div>
-<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/16/2022 07:36 UTC">July 16, 2022</span></span>
-</div>
-<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
-<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/16/2022 07:36 UTC">July 16, 2022</span></span>
-</div>
-<div style="width: 60px;" class="table-cell">
-<div class="iconsBox ">
-<div class="infoIconPositioning">
-<a class="infoLink" href="javascript:void(0);">
-<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
-</a>
-</div>
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-243-0-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="infoSlide t-height">
-<p>
-<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.243.0 </span>
-</p>
-<p>
-<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="07/16/2022 07:36 UTC">July 16, 2022 at 7:36AM UTC</span></span>
-</p>
-<p>
-<span class="infoSlide-name">File size:</span><span class="infoSlide-value">120.57 MB</span>
-</p>
-<p>
-<span class="infoSlide-name">Downloads:</span><span class="infoSlide-value">2,231 </span>
-</p>
-</div>
+<ins class="adsbygoogle adslot" style="display:block" data-ad-client="ca-pub-8776668743582988" data-ad-slot="8011957288" data-ad-format="link"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div></div>
+<div class='ains ains-51 ains-apkm_outbrain_ad' style='margin: 8px 0; clear: both;'>
+<div class="OUTBRAIN" data-src="http://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/" data-widget-id="AR_1" data-ob-template="IllogicalRobot"></div>
+<script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script></div>
+<div class="listWidget">
+<div class="p-relative">
+<div class="widgetHeader d-flex f-start f-a-start">All Releases </div>
 </div>
 <div>
 <div class="appRow">
@@ -523,7 +669,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div style="padding-top: 4px;">
 <h5 title="Pokémon GO 0.243.0" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/">Pokémon GO 0.243.0</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
 <span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/12/2022 22:26 UTC">July 12, 2022</span></span>
 </div>
 <div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
@@ -562,61 +708,13 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F79%2F62c3374710246.png&w=32&h=32&q=100" alt="Pokémon GO (Samsung Galaxy Store) 0.241.1"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-1-release/#disqus_thread" data-disqus-identifier="3666216 https://www.apkmirror.com/?post_type=app_release&#038;p=3666216" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<div style="padding-top: 4px;">
-<h5 title="Pokémon GO (Samsung Galaxy Store) 0.241.1" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-1-release/">Pokémon GO (Samsung Galaxy Store) 0.241.1</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>2 variants</a></div> </div>
-<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/4/2022 19:14 UTC">July 4, 2022</span></span>
-</div>
-<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
-<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="07/4/2022 19:14 UTC">July 4, 2022</span></span>
-</div>
-<div style="width: 60px;" class="table-cell">
-<div class="iconsBox ">
-<div class="infoIconPositioning">
-<a class="infoLink" href="javascript:void(0);">
-<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
-</a>
-</div>
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-1-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="infoSlide t-height">
-<p>
-<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.241.1 </span>
-</p>
-<p>
-<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="07/4/2022 19:14 UTC">July 4, 2022 at 7:14PM UTC</span></span>
-</p>
-<p>
-<span class="infoSlide-name">File size:</span><span class="infoSlide-value">117.09 MB</span>
-</p>
-<p>
-<span class="infoSlide-name">Downloads:</span><span class="infoSlide-value">41,410 </span>
-</p>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
 <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F62%2F62bdd9727c085.png&w=32&h=32&q=100" alt="Pokémon GO 0.241.1"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-1-release/#disqus_thread" data-disqus-identifier="3653785 https://www.apkmirror.com/?post_type=app_release&#038;p=3653785" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
 <div style="padding-top: 4px;">
 <h5 title="Pokémon GO 0.241.1" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-1-release/">Pokémon GO 0.241.1</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
 <span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/30/2022 17:45 UTC">June 30, 2022</span></span>
 </div>
 <div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
@@ -655,61 +753,13 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F31%2F62b4b70e12e3b.png&w=32&h=32&q=100" alt="Pokémon GO (Samsung Galaxy Store) 0.241.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-0-release/#disqus_thread" data-disqus-identifier="3627577 https://www.apkmirror.com/?post_type=app_release&#038;p=3627577" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<div style="padding-top: 4px;">
-<h5 title="Pokémon GO (Samsung Galaxy Store) 0.241.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-0-release/">Pokémon GO (Samsung Galaxy Store) 0.241.0</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>2 variants</a></div> </div>
-<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/24/2022 05:26 UTC">June 24, 2022</span></span>
-</div>
-<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
-<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/24/2022 05:26 UTC">June 24, 2022</span></span>
-</div>
-<div style="width: 60px;" class="table-cell">
-<div class="iconsBox ">
-<div class="infoIconPositioning">
-<a class="infoLink" href="javascript:void(0);">
-<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
-</a>
-</div>
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-241-0-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="infoSlide t-height">
-<p>
-<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.241.0 </span>
-</p>
-<p>
-<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="06/24/2022 05:26 UTC">June 24, 2022 at 5:26AM UTC</span></span>
-</p>
-<p>
-<span class="infoSlide-name">File size:</span><span class="infoSlide-value">117.33 MB</span>
-</p>
-<p>
-<span class="infoSlide-name">Downloads:</span><span class="infoSlide-value">48,113 </span>
-</p>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
 <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F60%2F62b38db12ceca.png&w=32&h=32&q=100" alt="Pokémon GO 0.241.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-0-release/#disqus_thread" data-disqus-identifier="3617372 https://www.apkmirror.com/?post_type=app_release&#038;p=3617372" title="View comments"></a></span> </div>
 </div>
-<div class="table-cell">
+ <div class="table-cell">
 <div style="padding-top: 4px;">
 <h5 title="Pokémon GO 0.241.0" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-0-release/">Pokémon GO 0.241.0</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-241-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
 <span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/22/2022 21:47 UTC">June 22, 2022</span></span>
 </div>
 <div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
@@ -748,61 +798,13 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F53%2F62a2388040389.png&w=32&h=32&q=100" alt="Pokémon GO (Samsung Galaxy Store) 0.239.2"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-2-release/#disqus_thread" data-disqus-identifier="3576549 https://www.apkmirror.com/?post_type=app_release&#038;p=3576549" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<div style="padding-top: 4px;">
-<h5 title="Pokémon GO (Samsung Galaxy Store) 0.239.2" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-2-release/">Pokémon GO (Samsung Galaxy Store) 0.239.2</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-2-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>2 variants</a></div> </div>
-<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/9/2022 20:00 UTC">June 9, 2022</span></span>
-</div>
-<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
-<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/9/2022 20:00 UTC">June 9, 2022</span></span>
-</div>
-<div style="width: 60px;" class="table-cell">
-<div class="iconsBox ">
-<div class="infoIconPositioning">
-<a class="infoLink" href="javascript:void(0);">
-<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
-</a>
-</div>
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-2-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="infoSlide t-height">
-<p>
-<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.239.2 </span>
-</p>
-<p>
-<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="06/9/2022 20:00 UTC">June 9, 2022 at 8:00PM UTC</span></span>
-</p>
-<p>
-<span class="infoSlide-name">File size:</span><span class="infoSlide-value">116.86 MB</span>
-</p>
-<p>
-<span class="infoSlide-name">Downloads:</span><span class="infoSlide-value">59,361 </span>
-</p>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
 <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F07%2F62a01083ca29a.png&w=32&h=32&q=100" alt="Pokémon GO 0.239.2"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-2-release/#disqus_thread" data-disqus-identifier="3568422 https://www.apkmirror.com/?post_type=app_release&#038;p=3568422" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
 <div style="padding-top: 4px;">
 <h5 title="Pokémon GO 0.239.2" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-2-release/">Pokémon GO 0.239.2</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-2-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-2-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
 <span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/8/2022 03:21 UTC">June 8, 2022</span></span>
 </div>
 <div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
@@ -841,61 +843,13 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
- <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F31%2F629e5958c354b.png&w=32&h=32&q=100" alt="Pokémon GO (Samsung Galaxy Store) 0.239.1"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-1-release/#disqus_thread" data-disqus-identifier="3549356 https://www.apkmirror.com/?post_type=app_release&#038;p=3549356" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<div style="padding-top: 4px;">
-<h5 title="Pokémon GO (Samsung Galaxy Store) 0.239.1" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-1-release/">Pokémon GO (Samsung Galaxy Store) 0.239.1</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>2 variants</a></div> </div>
-<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/7/2022 00:11 UTC">June 7, 2022</span></span>
-</div>
-<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
-<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/7/2022 00:11 UTC">June 7, 2022</span></span>
-</div>
-<div style="width: 60px;" class="table-cell">
-<div class="iconsBox ">
-<div class="infoIconPositioning">
-<a class="infoLink" href="javascript:void(0);">
-<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
-</a>
-</div>
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-239-1-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="infoSlide t-height">
-<p>
-<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.239.1 </span>
-</p>
-<p>
-<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="06/7/2022 00:11 UTC">June 7, 2022 at 12:11AM UTC</span></span>
-</p>
-<p>
-<span class="infoSlide-name">File size:</span><span class="infoSlide-value">116.84 MB</span>
-</p>
-<p>
-<span class="infoSlide-name">Downloads:</span><span class="infoSlide-value">49,818 </span>
- </p>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
 <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F36%2F62981941b83c9.png&w=32&h=32&q=100" alt="Pokémon GO 0.239.1"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-1-release/#disqus_thread" data-disqus-identifier="3548645 https://www.apkmirror.com/?post_type=app_release&#038;p=3548645" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
 <div style="padding-top: 4px;">
 <h5 title="Pokémon GO 0.239.1" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-1-release/">Pokémon GO 0.239.1</a> </h5>
-<a href="/apk/niantic-inc/" class="byDeveloper block-on-mobile wrapText">by Niantic, Inc.</a> <div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
 <span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="06/2/2022 02:19 UTC">June 2, 2022</span></span>
 </div>
 <div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
@@ -929,34 +883,274 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 </p>
 </div>
 </div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F05%2F60%2F62904b5c42951.png&w=32&h=32&q=100" alt="Pokémon GO 0.239.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-0-release/#disqus_thread" data-disqus-identifier="3529490 https://www.apkmirror.com/?post_type=app_release&#038;p=3529490" title="View comments"></a></span> </div>
 </div>
-<div class='ains ains-44 ains-apkm_search_page_bottom ai-track' data-ai='WzQ0LDAsImFwa21fc2VhcmNoX3BhZ2VfYm90dG9tIiwiIiwxXQ=='>
-<span class="advertisement-text">Advertisement</span><a href="/premium" class="advertisement-text membership-text" title="APKMirror Premium" data-google-vignette="false"><span>Remove ads, dark theme, and more with <img src="/wp-content/themes/APKMirror/images/apple-touch-icon-57x57.png" alt="APKM Premium" width="18" height="18" /> Premium</span></a>
-<div class="gooWidget google-ad-leaderboard">
-
-<ins class="adsbygoogle adslot" style="display:block" data-ad-client="ca-pub-8776668743582988" data-ad-slot="6118833684"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div></div>
-<div class="listWidget center">
-<div class="appRow center">
-<div class="pagination">
-<div class='wp-pagenavi' role='navigation'>
-<span class='pages'>Page 1 of 33</span><span aria-current='page' class='current'>1</span><a class="page larger" title="Page 2" href="?post_type=app_release&amp;searchtype=apk&amp;page=2&amp;s=com.nianticlabs.pokemongo">2</a><a class="page larger" title="Page 3" href="?post_type=app_release&amp;searchtype=apk&amp;page=3&amp;s=com.nianticlabs.pokemongo">3</a><a class="page larger" title="Page 4" href="?post_type=app_release&amp;searchtype=apk&amp;page=4&amp;s=com.nianticlabs.pokemongo">4</a><a class="page larger" title="Page 5" href="?post_type=app_release&amp;searchtype=apk&amp;page=5&amp;s=com.nianticlabs.pokemongo">5</a><span class='extend'>...</span><a class="larger page" title="Page 10" href="?post_type=app_release&amp;searchtype=apk&amp;page=10&amp;s=com.nianticlabs.pokemongo">10</a><a class="larger page" title="Page 20" href="?post_type=app_release&amp;searchtype=apk&amp;page=20&amp;s=com.nianticlabs.pokemongo">20</a><span class='extend'>...</span><a class="nextpostslink" rel="next" aria-label="Next Page" href="?post_type=app_release&amp;searchtype=apk&amp;page=2&amp;s=com.nianticlabs.pokemongo">Next ›</a><a class="last" aria-label="Last Page" href="?post_type=app_release&amp;searchtype=apk&amp;page=33&amp;s=com.nianticlabs.pokemongo">Last »</a>
-</div> </div>
+<div class="table-cell">
+<div style="padding-top: 4px;">
+<h5 title="Pokémon GO 0.239.0" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-0-release/">Pokémon GO 0.239.0</a> </h5>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="05/28/2022 14:17 UTC">May 28, 2022</span></span>
+</div>
+<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
+<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="05/28/2022 14:17 UTC">May 28, 2022</span></span>
+</div>
+<div style="width: 60px;" class="table-cell">
+<div class="iconsBox ">
+<div class="infoIconPositioning">
+<a class="infoLink" href="javascript:void(0);">
+<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
+</a>
+</div>
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-239-0-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
 </div>
 </div>
-<div class='ains ains-51 ains-apkm_outbrain_ad' style='margin: 8px 0; clear: both;'>
-<div class="OUTBRAIN" data-src="http://www.apkmirror.com" data-widget-id="AR_1" data-ob-template="IllogicalRobot"></div>
-<script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script></div>
+</div>
+</div>
+</div>
+<div class="infoSlide t-height">
+<p>
+<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.239.0 </span>
+</p>
+<p>
+<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="05/28/2022 14:17 UTC">May 28, 2022 at 2:17PM UTC</span></span>
+</p>
+<p>
+<span class="infoSlide-name">File size:</span><span class="infoSlide-value">51.28 MB</span>
+</p>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F05%2F14%2F627480390d2ea.png&w=32&h=32&q=100" alt="Pokémon GO 0.237.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-237-0-release/#disqus_thread" data-disqus-identifier="3456901 https://www.apkmirror.com/?post_type=app_release&#038;p=3456901" title="View comments">1</a></span> </div>
+</div>
+<div class="table-cell">
+<div style="padding-top: 4px;">
+<h5 title="Pokémon GO 0.237.0" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-237-0-release/">Pokémon GO 0.237.0</a> </h5>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-237-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="05/6/2022 01:56 UTC">May 6, 2022</span></span>
+</div>
+<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
+<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="05/6/2022 01:56 UTC">May 6, 2022</span></span>
+</div>
+<div style="width: 60px;" class="table-cell">
+<div class="iconsBox ">
+<div class="infoIconPositioning">
+<a class="infoLink" href="javascript:void(0);">
+<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
+</a>
+</div>
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-237-0-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="infoSlide t-height">
+<p>
+<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.237.0 </span>
+</p>
+<p>
+<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="05/6/2022 01:56 UTC">May 6, 2022 at 1:56AM UTC</span></span>
+</p>
+<p>
+<span class="infoSlide-name">File size:</span><span class="infoSlide-value">51.02 MB</span>
+</p>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F04%2F56%2F62576cd56b37f.png&w=32&h=32&q=100" alt="Pokémon GO 0.235.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-235-0-release/#disqus_thread" data-disqus-identifier="3386264 https://www.apkmirror.com/?post_type=app_release&#038;p=3386264" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<div style="padding-top: 4px;">
+<h5 title="Pokémon GO 0.235.0" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-235-0-release/">Pokémon GO 0.235.0</a> </h5>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-235-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="04/14/2022 04:56 UTC">April 14, 2022</span></span>
+</div>
+<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
+<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="04/14/2022 04:56 UTC">April 14, 2022</span></span>
+</div>
+<div style="width: 60px;" class="table-cell">
+<div class="iconsBox ">
+ <div class="infoIconPositioning">
+<a class="infoLink" href="javascript:void(0);">
+<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
+</a>
+</div>
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-235-0-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="infoSlide t-height">
+<p>
+<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.235.0 </span>
+</p>
+<p>
+<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="04/14/2022 04:56 UTC">April 14, 2022 at 4:56AM UTC</span></span>
+</p>
+<p>
+<span class="infoSlide-name">File size:</span><span class="infoSlide-value">51.72 MB</span>
+</p>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F04%2F37%2F624ce8677ffb3.png&w=32&h=32&q=100" alt="Pokémon GO 0.233.1"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-1-release/#disqus_thread" data-disqus-identifier="3357542 https://www.apkmirror.com/?post_type=app_release&#038;p=3357542" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<div style="padding-top: 4px;">
+<h5 title="Pokémon GO 0.233.1" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-1-release/">Pokémon GO 0.233.1</a> </h5>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-1-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="04/6/2022 05:50 UTC">April 6, 2022</span></span>
+</div>
+<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
+<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="04/6/2022 05:50 UTC">April 6, 2022</span></span>
+</div>
+<div style="width: 60px;" class="table-cell">
+<div class="iconsBox ">
+<div class="infoIconPositioning">
+<a class="infoLink" href="javascript:void(0);">
+<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
+</a>
+ </div>
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-1-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="infoSlide t-height">
+<p>
+<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.233.1 </span>
+</p>
+<p>
+<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="04/6/2022 05:50 UTC">April 6, 2022 at 5:50AM UTC</span></span>
+</p>
+<p>
+<span class="infoSlide-name">File size:</span><span class="infoSlide-value">51.49 MB</span>
+</p>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F03%2F96%2F623d5637e9fe0.png&w=32&h=32&q=100" alt="Pokémon GO 0.233.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-0-release/#disqus_thread" data-disqus-identifier="3311723 https://www.apkmirror.com/?post_type=app_release&#038;p=3311723" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<div style="padding-top: 4px;">
+<h5 title="Pokémon GO 0.233.0" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-0-release/">Pokémon GO 0.233.0</a> </h5>
+<div class="appRowVariantTag wrapText"><a class="accent_color" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-0-release/"><svg class="icon tag-icon"><use xlink:href="#apkm-icon-tag"></use></svg>4 variants</a></div> </div>
+<span style="padding-right:12px;" class="visible-xs colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="03/25/2022 05:43 UTC">March 25, 2022</span></span>
+</div>
+<div style="width: 150px; text-align: right;" class="table-cell hidden-xs">
+<span style="padding-right:12px;" class="colorLightBlack"><span style="" class="dateyear_utc" data-utcdate="03/25/2022 05:43 UTC">March 25, 2022</span></span>
+</div>
+<div style="width: 60px;" class="table-cell">
+<div class="iconsBox ">
+<div class="infoIconPositioning">
+<a class="infoLink" href="javascript:void(0);">
+<svg class="icon iconColor info-icon"><use xlink:href="#apkm-icon-info"></use></svg>
+</a>
+</div>
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/niantic-inc/pokemon-go/pokemon-go-0-233-0-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="infoSlide t-height">
+<p>
+<span class="infoSlide-name">Version:</span><span class="infoSlide-value">0.233.0 </span>
+</p>
+<p>
+<span class="infoSlide-name">Uploaded:</span><span class="infoSlide-value"><span style="" class="datetime_utc" data-utcdate="03/25/2022 05:43 UTC">March 25, 2022 at 5:43AM UTC</span></span>
+</p>
+<p>
+<span class="infoSlide-name">File size:</span><span class="infoSlide-value">51.49 MB</span>
+</p>
+</div>
+</div>
+<div style="padding-top: 7px; padding-bottom: 7px; height: 51px;" class="table noMargins">
+<div class="table-row">
+<div class="table-cell center">
+<a class="fontBlack" href="/uploads/?appcategory=pokemon-go">See more uploads...</a>
+</div>
+</div>
+</div>
+</div>
+<div class="listWidget">
+<div class="widgetHeader">Comments</div>
+<div class="addpadding ellipsisText">
+<div id="disqus_thread"></div>
+</div>
+</div>
+<div class="modal fade" id="safeDownload" tabindex="-1" role="dialog" aria-labelledby="safeDownload" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h2 class="modal-title fontBlack">Safe to Download</h2>
+</div>
+<div class="modal-body">
+<h5>These APKs and the base and split configuration APKs contained in these APK bundles are signed by Niantic, Inc. and upgrade your existing app.</h5>
+<br>
+<h4>APK certificate fingerprints</h4>
+SHA-1: <span class="wordbreak-all" style="background-color: rgb(220, 255, 166);"><a style="color: #000" href="/?s=321187995bc7cdc2b5fc91b11a96e2baa8602c62&post_type=app_release&searchtype=app">321187995bc7cdc2b5fc91b11a96e2baa8602c62</a></span><br>
+SHA-256: <span class="wordbreak-all" style="background-color: rgb(220, 255, 166);"><a style="color: #000" href="/?s=944bda466eaf64be1c93896d5c8e9a454a07c8d8fcbc4adeeefb3545b335e979&post_type=app_release&searchtype=app">944bda466eaf64be1c93896d5c8e9a454a07c8d8fcbc4adeeefb3545b335e979</a></span><br>
+Certificate: <span style="background-color: rgb(220, 255, 166); color: #000">CN=Unknown, OU="Niantic, Inc.", O="Niantic, Inc.", L=San Francisco, ST=California, C=CA</span>
+<br> <h5>The cryptographic signature guarantees the files are safe to install and were not tampered with in any way.</h5>
+</div>
+<div class="modal-footer">
+<button style="color: white;" type="button" class="accent_bg btn btn-flat" data-dismiss="modal">Got It!
+</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="sidebar" class="f-md-33 col-padding sidebar-widget" role="complementary">
 
 
 <div class="listWidget">
 <h5 class="widgetHeader">Follow APK Mirror</h5>
-<div class="table" style="table-layout: fixed;">
+ <div class="table" style="table-layout: fixed;">
 <div class="table-row">
 <div class="table-cell center"><a href="https://www.facebook.com/apkmirror" rel="follow" target="_blank"><svg class="clickable icon icon-facebook"><use xlink:href="#apkm-icon-facebook"></use></svg></a></div>
 <div class="table-cell center"><a href="https://twitter.com/apkmirror" rel="follow" target="_blank"><svg class="clickable icon icon-twitter"><use xlink:href="#apkm-icon-twitter"></use></svg></a></div>
@@ -966,7 +1160,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 </div>
 <div class="table noMargins">
 <div class="table-row">
- <div class="table-cell center">
+<div class="table-cell center">
 <p><span class="pushbullet-subscribe-widget abtn abtn-pb  alignleft" data-description="" data-channel-name="Follow APK Mirror Updates" data-image-url="" data-tag="am-1071836729" data-feed-url="" data-widget="button" data-size="large" href="#">
 <svg class="icon inline-icon ">
 <use xlink:href="#apkm-icon-pushbullet"></use>
@@ -994,16 +1188,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F45%2F62d3f3309f3fb.png&w=32&h=32&q=100" alt="Chrome Canary (Unstable) 105.0.5185.0"><span class="bubble "><a href="/apk/google-inc/chrome-canary-unstable/chrome-canary-unstable-105-0-5185-0-release/#disqus_thread" data-disqus-identifier="3709999 http://www.apkmirror.com/?post_type=app_release&#038;p=3709999" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F39%2F62d31d636753c.png&w=32&h=32&q=100" alt="Trell - Made in India | Lifestyle Videos App 6.1.82"><span class="bubble "><a href="/apk/trell-experiences/trell-made-in-india-lifestyle-videos-app/trell-made-in-india-lifestyle-videos-app-6-1-82-release/#disqus_thread" data-disqus-identifier="3709246 http://www.apkmirror.com/?post_type=app_release&#038;p=3709246" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Chrome Canary (Unstable) 105.0.5185.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/chrome-canary-unstable/chrome-canary-unstable-105-0-5185-0-release/">Chrome Canary (Unstable) 105.0.5185.0</a> </h5>
+<h5 title="Trell - Made in India | Lifestyle Videos App 6.1.82" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/trell-experiences/trell-made-in-india-lifestyle-videos-app/trell-made-in-india-lifestyle-videos-app-6-1-82-release/">Trell - Made in India | Lifestyle Videos App 6.1.82</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/chrome-canary-unstable/chrome-canary-unstable-105-0-5185-0-release/">
+<a class="downloadLink" href="/apk/trell-experiences/trell-made-in-india-lifestyle-videos-app/trell-made-in-india-lifestyle-videos-app-6-1-82-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1017,16 +1211,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F49%2F62d3ee9ca0b52.png&w=32&h=32&q=100" alt="Speed Test WiFi Analyzer 2022.07.61710"><span class="bubble "><a href="/apk/analiti-experts-group/speed-test-wifi-analyzer-expert-analiti/speed-test-wifi-analyzer-expert-analiti-2022-07-61710-release/#disqus_thread" data-disqus-identifier="3709991 http://www.apkmirror.com/?post_type=app_release&#038;p=3709991" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F93%2F62d319a695bab.png&w=32&h=32&q=100" alt="Legend of Solgard 2.30.3"><span class="bubble "><a href="/apk/snowprint-studios-ab/legend-of-solgard/legend-of-solgard-2-30-3-release/#disqus_thread" data-disqus-identifier="3709239 http://www.apkmirror.com/?post_type=app_release&#038;p=3709239" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Speed Test WiFi Analyzer 2022.07.61710" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/analiti-experts-group/speed-test-wifi-analyzer-expert-analiti/speed-test-wifi-analyzer-expert-analiti-2022-07-61710-release/">Speed Test WiFi Analyzer 2022.07.61710</a> </h5>
+<h5 title="Legend of Solgard 2.30.3" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/snowprint-studios-ab/legend-of-solgard/legend-of-solgard-2-30-3-release/">Legend of Solgard 2.30.3</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/analiti-experts-group/speed-test-wifi-analyzer-expert-analiti/speed-test-wifi-analyzer-expert-analiti-2022-07-61710-release/">
+<a class="downloadLink" href="/apk/snowprint-studios-ab/legend-of-solgard/legend-of-solgard-2-30-3-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1040,16 +1234,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F00%2F62d3e8bd90f50.png&w=32&h=32&q=100" alt="Smart Life - Smart Living 4.2.0"><span class="bubble "><a href="/apk/volcano-technology-limited/smart-life-smart-living/smart-life-smart-living-4-2-0-release/#disqus_thread" data-disqus-identifier="3709981 http://www.apkmirror.com/?post_type=app_release&#038;p=3709981" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F42%2F62d31838bcf78.png&w=32&h=32&q=100" alt="Yandex Browser (beta) 22.7.4.38"><span class="bubble "><a href="/apk/intertech-services-ag/yandex-browser-beta/yandex-browser-beta-22-7-4-38-release/#disqus_thread" data-disqus-identifier="3709230 http://www.apkmirror.com/?post_type=app_release&#038;p=3709230" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Smart Life - Smart Living 4.2.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/volcano-technology-limited/smart-life-smart-living/smart-life-smart-living-4-2-0-release/">Smart Life - Smart Living 4.2.0</a> </h5>
+<h5 title="Yandex Browser (beta) 22.7.4.38" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/intertech-services-ag/yandex-browser-beta/yandex-browser-beta-22-7-4-38-release/">Yandex Browser (beta) 22.7.4.38</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/volcano-technology-limited/smart-life-smart-living/smart-life-smart-living-4-2-0-release/">
+<a class="downloadLink" href="/apk/intertech-services-ag/yandex-browser-beta/yandex-browser-beta-22-7-4-38-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1063,16 +1257,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
- <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F02%2F62d3e369a1907.png&w=32&h=32&q=100" alt="Files To SD Card 1.69011"><span class="bubble "><a href="/apk/michal-bukacek/files-to-sd-card/files-to-sd-card-1-69011-release/#disqus_thread" data-disqus-identifier="3709957 http://www.apkmirror.com/?post_type=app_release&#038;p=3709957" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F93%2F62d2ed96679dd.png&w=32&h=32&q=100" alt="Discord: Talk, Chat &amp; Hang Out 137.5 - Alpha"><span class="bubble "><a href="/apk/discord-inc/discord-chat-for-gamers/discord-chat-for-gamers-137-5-alpha-release/#disqus_thread" data-disqus-identifier="3709114 https://www.apkmirror.com/?post_type=app_release&#038;p=3709114" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Files To SD Card 1.69011" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/michal-bukacek/files-to-sd-card/files-to-sd-card-1-69011-release/">Files To SD Card 1.69011</a> </h5>
+<h5 title="Discord: Talk, Chat &amp; Hang Out 137.5 - Alpha" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/discord-inc/discord-chat-for-gamers/discord-chat-for-gamers-137-5-alpha-release/">Discord: Talk, Chat &amp; Hang Out 137.5 - Alpha</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/michal-bukacek/files-to-sd-card/files-to-sd-card-1-69011-release/">
+<a class="downloadLink" href="/apk/discord-inc/discord-chat-for-gamers/discord-chat-for-gamers-137-5-alpha-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1086,16 +1280,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F88%2F62d3e05e0d9dd.png&w=32&h=32&q=100" alt="Advanced Download Manager 14.0.8"><span class="bubble "><a href="/apk/advancedapp/advanced-download-manager/advanced-download-manager-14-0-8-release/#disqus_thread" data-disqus-identifier="3709917 http://www.apkmirror.com/?post_type=app_release&#038;p=3709917" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F65%2F62d2ee2586c1e.png&w=32&h=32&q=100" alt="Discord: Talk, Chat &amp; Hang Out 136.14 - Beta"><span class="bubble "><a href="/apk/discord-inc/discord-chat-for-gamers/discord-chat-for-gamers-136-14-beta-release/#disqus_thread" data-disqus-identifier="3709121 https://www.apkmirror.com/?post_type=app_release&#038;p=3709121" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Advanced Download Manager 14.0.8" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/advancedapp/advanced-download-manager/advanced-download-manager-14-0-8-release/">Advanced Download Manager 14.0.8</a> </h5>
+<h5 title="Discord: Talk, Chat &amp; Hang Out 136.14 - Beta" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/discord-inc/discord-chat-for-gamers/discord-chat-for-gamers-136-14-beta-release/">Discord: Talk, Chat &amp; Hang Out 136.14 - Beta</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/advancedapp/advanced-download-manager/advanced-download-manager-14-0-8-release/">
+<a class="downloadLink" href="/apk/discord-inc/discord-chat-for-gamers/discord-chat-for-gamers-136-14-beta-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1109,16 +1303,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F27%2F62d3e072e9a23.png&w=32&h=32&q=100" alt="Overdrop - Weather &amp; Widgets 1.8.4"><span class="bubble "><a href="/apk/39ninety/overdrop-weather-animated-forecast-widgets/overdrop-weather-animated-forecast-widgets-1-8-4-release/#disqus_thread" data-disqus-identifier="3709934 http://www.apkmirror.com/?post_type=app_release&#038;p=3709934" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F71%2F62d2fddf27de5.png&w=32&h=32&q=100" alt="Xiaomi Package installer 2.2.8"><span class="bubble "><a href="/apk/xiaomi-inc/globalpackageinstaller/globalpackageinstaller-2-2-8-release/#disqus_thread" data-disqus-identifier="3709160 https://www.apkmirror.com/?post_type=app_release&#038;p=3709160" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Overdrop - Weather &amp; Widgets 1.8.4" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/39ninety/overdrop-weather-animated-forecast-widgets/overdrop-weather-animated-forecast-widgets-1-8-4-release/">Overdrop - Weather &amp; Widgets 1.8.4</a> </h5>
+<h5 title="Xiaomi Package installer 2.2.8" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/xiaomi-inc/globalpackageinstaller/globalpackageinstaller-2-2-8-release/">Xiaomi Package installer 2.2.8</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/39ninety/overdrop-weather-animated-forecast-widgets/overdrop-weather-animated-forecast-widgets-1-8-4-release/">
+<a class="downloadLink" href="/apk/xiaomi-inc/globalpackageinstaller/globalpackageinstaller-2-2-8-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1132,16 +1326,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F24%2F62d3dc36b0ccb.png&w=32&h=32&q=100" alt="Android System WebView Canary 105.0.5185.0"><span class="bubble "><a href="/apk/google-inc/android-system-webview-canary/android-system-webview-canary-105-0-5185-0-release/#disqus_thread" data-disqus-identifier="3709869 http://www.apkmirror.com/?post_type=app_release&#038;p=3709869" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F98%2F62d27ee17e879.png&w=32&h=32&q=100" alt="Microsoft OneDrive 6.60 (Beta 4)"><span class="bubble "><a href="/apk/microsoft-corporation/onedrive/onedrive-6-60-beta-4-release/#disqus_thread" data-disqus-identifier="3708604 https://www.apkmirror.com/?post_type=app_release&#038;p=3708604" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Android System WebView Canary 105.0.5185.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/android-system-webview-canary/android-system-webview-canary-105-0-5185-0-release/">Android System WebView Canary 105.0.5185.0</a> </h5>
-</div>
+<h5 title="Microsoft OneDrive 6.60 (Beta 4)" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/microsoft-corporation/onedrive/onedrive-6-60-beta-4-release/">Microsoft OneDrive 6.60 (Beta 4)</a> </h5>
+ </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/android-system-webview-canary/android-system-webview-canary-105-0-5185-0-release/">
+<a class="downloadLink" href="/apk/microsoft-corporation/onedrive/onedrive-6-60-beta-4-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1155,16 +1349,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F92%2F62d3dc3f07730.png&w=32&h=32&q=100" alt="Trichrome Library Canary 105.0.5185.0"><span class="bubble "><a href="/apk/google-inc/trichrome-library-canary/trichrome-library-canary-105-0-5185-0-release/#disqus_thread" data-disqus-identifier="3709875 http://www.apkmirror.com/?post_type=app_release&#038;p=3709875" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F18%2F62d2714034e3d.png&w=32&h=32&q=100" alt="Twitter 9.51.0-beta.4"><span class="bubble "><a href="/apk/twitter-inc/twitter/twitter-9-51-0-beta-4-release/#disqus_thread" data-disqus-identifier="3708547 https://www.apkmirror.com/?post_type=app_release&#038;p=3708547" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Trichrome Library Canary 105.0.5185.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/trichrome-library-canary/trichrome-library-canary-105-0-5185-0-release/">Trichrome Library Canary 105.0.5185.0</a> </h5>
+<h5 title="Twitter 9.51.0-beta.4" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/twitter-inc/twitter/twitter-9-51-0-beta-4-release/">Twitter 9.51.0-beta.4</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/trichrome-library-canary/trichrome-library-canary-105-0-5185-0-release/">
+<a class="downloadLink" href="/apk/twitter-inc/twitter/twitter-9-51-0-beta-4-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1178,16 +1372,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F85%2F62d12d4ff1b0e.png&w=32&h=32&q=100" alt="High Heels! 3.5.9"><span class="bubble "><a href="/apk/zynga/high-heels/high-heels-3-5-9-release/#disqus_thread" data-disqus-identifier="3706073 http://www.apkmirror.com/?post_type=app_release&#038;p=3706073" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F71%2F62d118272c013.png&w=32&h=32&q=100" alt="Twitter 9.52.0-alpha.5"><span class="bubble "><a href="/apk/twitter-inc/twitter/twitter-9-52-0-alpha-5-release/#disqus_thread" data-disqus-identifier="3705775 https://www.apkmirror.com/?post_type=app_release&#038;p=3705775" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="High Heels! 3.5.9" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/zynga/high-heels/high-heels-3-5-9-release/">High Heels! 3.5.9</a> </h5>
+<h5 title="Twitter 9.52.0-alpha.5" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/twitter-inc/twitter/twitter-9-52-0-alpha-5-release/">Twitter 9.52.0-alpha.5</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/zynga/high-heels/high-heels-3-5-9-release/">
+<a class="downloadLink" href="/apk/twitter-inc/twitter/twitter-9-52-0-alpha-5-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1201,16 +1395,16 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F83%2F62d3cd12155c7.png&w=32&h=32&q=100" alt="Wildberries 4.7.1000"><span class="bubble "><a href="/apk/wildberries-llc/wildberries/wildberries-4-7-1000-release/#disqus_thread" data-disqus-identifier="3709851 http://www.apkmirror.com/?post_type=app_release&#038;p=3709851" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F02%2F62d1e0a4e686f.png&w=32&h=32&q=100" alt="Amazon Prime Video 3.0.328"><span class="bubble "><a href="/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-328-release/#disqus_thread" data-disqus-identifier="3707784 https://www.apkmirror.com/?post_type=app_release&#038;p=3707784" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Wildberries 4.7.1000" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/wildberries-llc/wildberries/wildberries-4-7-1000-release/">Wildberries 4.7.1000</a> </h5>
+<h5 title="Amazon Prime Video 3.0.328" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-328-release/">Amazon Prime Video 3.0.328</a> </h5>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/wildberries-llc/wildberries/wildberries-4-7-1000-release/">
+<a class="downloadLink" href="/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-328-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1244,7 +1438,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/xiaomi-inc/camera-xiaomi/camera-xiaomi-4-3-004660-0-release/">Xiaomi Camera 4.3.004660.0</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">97K</span>
+<span style="padding-right:12px;" class="colorLightBlack">96K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1253,7 +1447,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
- </div>
+</div>
 </div>
 </div>
 </div>
@@ -1292,7 +1486,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F42%2F62ad2b40148ab.png&w=32&h=32&q=100" alt="Google Play services 22.24.13"><span class="bubble "><a href="/apk/google-inc/google-play-services/google-play-services-22-24-13-release/#disqus_thread" data-disqus-identifier="3603029 https://www.apkmirror.com/?post_type=app_release&#038;p=3603029" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Google Play services 22.24.13" class="appRowTitle wrapText marginZero block-on-mobile">
+ <h5 title="Google Play services 22.24.13" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/google-inc/google-play-services/google-play-services-22-24-13-release/">Google Play services 22.24.13</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
@@ -1302,58 +1496,6 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
 <a class="downloadLink" href="/apk/google-inc/google-play-services/google-play-services-22-24-13-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2Fic_round_launcher_play_store.webp&w=32&h=32&q=100" alt="Google Play Store 31.4.10"><span class="bubble "><a href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/#disqus_thread" data-disqus-identifier="3695749 https://www.apkmirror.com/?post_type=app_release&#038;p=3695749" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="Google Play Store 31.4.10" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/">Google Play Store 31.4.10</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">55K</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F85%2F62cca780712f0.png&w=32&h=32&q=100" alt="Google Play services 22.26.14"><span class="bubble "><a href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/#disqus_thread" data-disqus-identifier="3689323 http://www.apkmirror.com/?post_type=app_release&#038;p=3689323" title="View comments">4</a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="Google Play services 22.26.14" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">Google Play services 22.26.14</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">49K</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1419,7 +1561,33 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2021%2F08%2F27%2F6129a3007442b.png&w=32&h=32&q=100" alt="Samsung Keyboard 4.9.00.8"><span class="bubble "><a href="/apk/samsung-electronics-co-ltd/samsung-keyboard/samsung-keyboard-4-9-00-8-release/#disqus_thread" data-disqus-identifier="2189640 https://www.apkmirror.com/?post_type=app_release&#038;p=2189640" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2Fic_round_launcher_play_store.webp&w=32&h=32&q=100" alt="Google Play Store 31.4.10"><span class="bubble "><a href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/#disqus_thread" data-disqus-identifier="3695749 https://www.apkmirror.com/?post_type=app_release&#038;p=3695749" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<h5 title="Google Play Store 31.4.10" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/">Google Play Store 31.4.10</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">47K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+ <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2021%2F08%2F27%2F6129a3007442b.png&w=32&h=32&q=100" alt="Samsung Keyboard 4.9.00.8"><span class="bubble "><a href="/apk/samsung-electronics-co-ltd/samsung-keyboard/samsung-keyboard-4-9-00-8-release/#disqus_thread" data-disqus-identifier="2189640 https://www.apkmirror.com/?post_type=app_release&#038;p=2189640" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
 <h5 title="Samsung Keyboard 4.9.00.8" class="appRowTitle wrapText marginZero block-on-mobile">
@@ -1438,6 +1606,32 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 </div>
 </div>
 </div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F85%2F62cca780712f0.png&w=32&h=32&q=100" alt="Google Play services 22.26.14"><span class="bubble "><a href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/#disqus_thread" data-disqus-identifier="3689323 http://www.apkmirror.com/?post_type=app_release&#038;p=3689323" title="View comments">4</a></span> </div>
+</div>
+<div class="table-cell">
+<h5 title="Google Play services 22.26.14" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">Google Play services 22.26.14</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">43K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+ </div>
 </div>
 </div>
 <div>
@@ -1478,11 +1672,11 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/google-inc/google-play-store/google-play-store-31-3-19-release/">Google Play Store 31.3.19</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">39K</span>
+<span style="padding-right:12px;" class="colorLightBlack">38K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
+ <div class="downloadIconPositioning">
 <a class="downloadLink" href="/apk/google-inc/google-play-store/google-play-store-31-3-19-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
@@ -1502,14 +1696,14 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
- <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2Fic_round_launcher_play_store.webp&w=32&h=32&q=100" alt="Google Play Store 31.4.10"><span class="bubble "><a href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/#disqus_thread" data-disqus-identifier="3695749 https://www.apkmirror.com/?post_type=app_release&#038;p=3695749" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2Fic_round_launcher_play_store.webp&w=32&h=32&q=100" alt="Google Play Store 31.4.10"><span class="bubble "><a href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/#disqus_thread" data-disqus-identifier="3695749 https://www.apkmirror.com/?post_type=app_release&#038;p=3695749" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
 <h5 title="Google Play Store 31.4.10" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/google-inc/google-play-store/google-play-store-31-4-10-release/">Google Play Store 31.4.10</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">55K</span>
+<span style="padding-right:12px;" class="colorLightBlack">47K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1535,38 +1729,12 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">Google Play services 22.26.14</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">49K</span>
+<span style="padding-right:12px;" class="colorLightBlack">43K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
 <a class="downloadLink" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F45%2F62ba401c4e25b.png&w=32&h=32&q=100" alt="Android Auto 7.8.6225"><span class="bubble "><a href="/apk/google-inc/android-auto/android-auto-7-8-6225-release/#disqus_thread" data-disqus-identifier="3640977 https://www.apkmirror.com/?post_type=app_release&#038;p=3640977" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="Android Auto 7.8.6225" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/android-auto/android-auto-7-8-6225-release/">Android Auto 7.8.6225</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">29K</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/android-auto/android-auto-7-8-6225-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1609,11 +1777,11 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2FCamera_round.png&w=32&h=32&q=100" alt="Xiaomi Camera 4.3.004931.0"><span class="bubble "><a href="/apk/xiaomi-inc/camera-xiaomi/camera-xiaomi-4-3-004931-0-release/#disqus_thread" data-disqus-identifier="3697690 https://www.apkmirror.com/?post_type=app_release&#038;p=3697690" title="View comments">5</a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Xiaomi Camera 4.3.004931.0" class="appRowTitle wrapText marginZero block-on-mobile">
+ <h5 title="Xiaomi Camera 4.3.004931.0" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/xiaomi-inc/camera-xiaomi/camera-xiaomi-4-3-004931-0-release/">Xiaomi Camera 4.3.004931.0</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">15K</span>
+<span style="padding-right:12px;" class="colorLightBlack">14K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1632,18 +1800,18 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F32%2F62cdaa2e435d0.png&w=32&h=32&q=100" alt="Xiaomi Security 7.0.4-220708.0.1"><span class="bubble "><a href="/apk/xiaomi-inc/miui-security/miui-security-7-0-4-220708-0-1-release/#disqus_thread" data-disqus-identifier="3693405 https://www.apkmirror.com/?post_type=app_release&#038;p=3693405" title="View comments">8</a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F32%2F62cdaa2e435d0.png&w=32&h=32&q=100" alt="Xiaomi Security 7.0.4-220708.0.1"><span class="bubble "><a href="/apk/xiaomi-inc/miui-security/miui-security-7-0-4-220708-0-1-release/#disqus_thread" data-disqus-identifier="3693405 https://www.apkmirror.com/?post_type=app_release&#038;p=3693405" title="View comments">7</a></span> </div>
 </div>
 <div class="table-cell">
 <h5 title="Xiaomi Security 7.0.4-220708.0.1" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/xiaomi-inc/miui-security/miui-security-7-0-4-220708-0-1-release/">Xiaomi Security 7.0.4-220708.0.1</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">11K</span>
+<span style="padding-right:12px;" class="colorLightBlack">9K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
- <div class="downloadIconPositioning">
+<div class="downloadIconPositioning">
 <a class="downloadLink" href="/apk/xiaomi-inc/miui-security/miui-security-7-0-4-220708-0-1-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
@@ -1665,38 +1833,12 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/nothing-technology-limited/nothing-launcher-beta/nothing-launcher-beta-1-0-2-release/">Nothing Launcher (Beta) 1.0.2 (Early Access)</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">9.2K</span>
+<span style="padding-right:12px;" class="colorLightBlack">8.8K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
 <a class="downloadLink" href="/apk/nothing-technology-limited/nothing-launcher-beta/nothing-launcher-beta-1-0-2-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F06%2F62cf355f60a0e.png&w=32&h=32&q=100" alt="HBO Max: Stream TV &amp; Movies (Android TV) 52.30.0"><span class="bubble "><a href="/apk/warnermedia-direct-llc/hbo-max-stream-hbo-tv-movies-more/hbo-max-stream-hbo-tv-movies-more-52-30-0-release/#disqus_thread" data-disqus-identifier="3699630 https://www.apkmirror.com/?post_type=app_release&#038;p=3699630" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="HBO Max: Stream TV &amp; Movies (Android TV) 52.30.0" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/warnermedia-direct-llc/hbo-max-stream-hbo-tv-movies-more/hbo-max-stream-hbo-tv-movies-more-52-30-0-release/">HBO Max: Stream TV &amp; Movies (Android TV) 52.30.0</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">7.4K</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/warnermedia-direct-llc/hbo-max-stream-hbo-tv-movies-more/hbo-max-stream-hbo-tv-movies-more-52-30-0-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1717,7 +1859,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/xiaomi-inc/miui-launcher/miui-launcher-alpha-4-39-0-5441-07111954-release/">Xiaomi System Launcher ALPHA-4.39.0.5441-07111954</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">7.2K</span>
+<span style="padding-right:12px;" class="colorLightBlack">7.1K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1736,14 +1878,66 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F44%2F62cdc15e23d77.png&w=32&h=32&q=100" alt="Netflix 8.31.1 build 14 50243"><span class="bubble "><a href="/apk/netflix-inc/netflix/netflix-8-31-1-build-14-50243-release/#disqus_thread" data-disqus-identifier="3693914 https://www.apkmirror.com/?post_type=app_release&#038;p=3693914" title="View comments"></a></span>  </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F47%2F62c9e50c6ffb2.png&w=32&h=32&q=100" alt="YouTube 17.26.35"><span class="bubble "><a href="/apk/google-inc/youtube/youtube-17-26-35-release/#disqus_thread" data-disqus-identifier="3685237 https://www.apkmirror.com/?post_type=app_release&#038;p=3685237" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<h5 title="YouTube 17.26.35" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/google-inc/youtube/youtube-17-26-35-release/">YouTube 17.26.35</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">7.1K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/google-inc/youtube/youtube-17-26-35-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F36%2F62ccf9794b7da.png&w=32&h=32&q=100" alt="PUBG MOBILE 2.1.0"><span class="bubble "><a href="/apk/level-infinite/pubgmobile/pubgmobile-2-1-0-release/#disqus_thread" data-disqus-identifier="3691437 https://www.apkmirror.com/?post_type=app_release&#038;p=3691437" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+ <h5 title="PUBG MOBILE 2.1.0" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/level-infinite/pubgmobile/pubgmobile-2-1-0-release/">PUBG MOBILE 2.1.0</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">6.5K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/level-infinite/pubgmobile/pubgmobile-2-1-0-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F44%2F62cdc15e23d77.png&w=32&h=32&q=100" alt="Netflix 8.31.1 build 14 50243"><span class="bubble "><a href="/apk/netflix-inc/netflix/netflix-8-31-1-build-14-50243-release/#disqus_thread" data-disqus-identifier="3693914 https://www.apkmirror.com/?post_type=app_release&#038;p=3693914" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
 <h5 title="Netflix 8.31.1 build 14 50243" class="appRowTitle wrapText marginZero block-on-mobile">
 <a class="fontBlack" href="/apk/netflix-inc/netflix/netflix-8-31-1-build-14-50243-release/">Netflix 8.31.1 build 14 50243</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">6.9K</span>
+<span style="padding-right:12px;" class="colorLightBlack">6.4K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1774,7 +1968,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/google-inc/google-play-services/google-play-services-22-26-14-release/">Google Play services 22.26.14</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">49K</span>
+<span style="padding-right:12px;" class="colorLightBlack">43K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1793,19 +1987,45 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F45%2F62ba401c4e25b.png&w=32&h=32&q=100" alt="Android Auto 7.8.6225"><span class="bubble "><a href="/apk/google-inc/android-auto/android-auto-7-8-6225-release/#disqus_thread" data-disqus-identifier="3640977 https://www.apkmirror.com/?post_type=app_release&#038;p=3640977" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F28%2F62d1c1541306b.png&w=32&h=32&q=100" alt="Nova Launcher 8.0 beta"><span class="bubble "><a href="/apk/teslacoil-software/nova-launcher/nova-launcher-8-0-release/#disqus_thread" data-disqus-identifier="3707623 https://www.apkmirror.com/?post_type=app_release&#038;p=3707623" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Android Auto 7.8.6225" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/android-auto/android-auto-7-8-6225-release/">Android Auto 7.8.6225</a> </h5>
+<h5 title="Nova Launcher 8.0 beta" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/teslacoil-software/nova-launcher/nova-launcher-8-0-release/">Nova Launcher 8.0 beta</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">29K</span>
+<span style="padding-right:12px;" class="colorLightBlack">3.3K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/android-auto/android-auto-7-8-6225-release/">
+<a class="downloadLink" href="/apk/teslacoil-software/nova-launcher/nova-launcher-8-0-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F47%2F62d1bfe7cb169.png&w=32&h=32&q=100" alt="WhatsApp Messenger 2.22.16.8 beta"><span class="bubble "><a href="/apk/whatsapp-inc/whatsapp/whatsapp-2-22-16-8-release/#disqus_thread" data-disqus-identifier="3707554 https://www.apkmirror.com/?post_type=app_release&#038;p=3707554" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<h5 title="WhatsApp Messenger 2.22.16.8 beta" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/whatsapp-inc/whatsapp/whatsapp-2-22-16-8-release/">WhatsApp Messenger 2.22.16.8 beta</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">3.3K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/whatsapp-inc/whatsapp/whatsapp-2-22-16-8-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1826,7 +2046,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/mozilla/firefox-fenix/firefox-fenix-104-0a1-release/">Firefox Browser (Nightly for Developers) 104.0a1</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">2.3K</span>
+<span style="padding-right:12px;" class="colorLightBlack">2.2K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1845,19 +2065,45 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F71%2F62d2fddf27de5.png&w=32&h=32&q=100" alt="Xiaomi Package installer 2.2.8"><span class="bubble "><a href="/apk/xiaomi-inc/globalpackageinstaller/globalpackageinstaller-2-2-8-release/#disqus_thread" data-disqus-identifier="3709160 https://www.apkmirror.com/?post_type=app_release&#038;p=3709160" title="View comments">1</a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F36%2F62d1f56c0fa98.png&w=32&h=32&q=100" alt="Xiaomi Scanner 14.0.2.1"><span class="bubble "><a href="/apk/xiaomi-inc/miui-qr-scanner-plus/miui-qr-scanner-plus-14-0-2-1-release/#disqus_thread" data-disqus-identifier="3707976 https://www.apkmirror.com/?post_type=app_release&#038;p=3707976" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Xiaomi Package installer 2.2.8" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/xiaomi-inc/globalpackageinstaller/globalpackageinstaller-2-2-8-release/">Xiaomi Package installer 2.2.8</a> </h5>
+<h5 title="Xiaomi Scanner 14.0.2.1" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/xiaomi-inc/miui-qr-scanner-plus/miui-qr-scanner-plus-14-0-2-1-release/">Xiaomi Scanner 14.0.2.1</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">1.4K</span>
+<span style="padding-right:12px;" class="colorLightBlack">1.8K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/xiaomi-inc/globalpackageinstaller/globalpackageinstaller-2-2-8-release/">
+<a class="downloadLink" href="/apk/xiaomi-inc/miui-qr-scanner-plus/miui-qr-scanner-plus-14-0-2-1-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F64%2F62d244a519463.png&w=32&h=32&q=100" alt="Pokémon GO (Samsung Galaxy Store) 0.243.0"><span class="bubble "><a href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-243-0-release/#disqus_thread" data-disqus-identifier="3708240 https://www.apkmirror.com/?post_type=app_release&#038;p=3708240" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<h5 title="Pokémon GO (Samsung Galaxy Store) 0.243.0" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-243-0-release/">Pokémon GO (Samsung Galaxy Store) 0.243.0</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">1.2K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go-samsung-galaxy-apps-version-0-243-0-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1878,7 +2124,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <a class="fontBlack" href="/apk/google-inc/photos/photos-5-98-0-460300543-release/">Google Photos 5.98.0.460300543</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">1.4K</span>
+<span style="padding-right:12px;" class="colorLightBlack">1.1K</span>
 </div>
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
@@ -1897,11 +2143,11 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F89%2F62ce7375bca54.png&w=32&h=32&q=100" alt="Google App 13.27.8"><span class="bubble "><a href="/apk/google-inc/google-search/google-search-13-27-8-release/#disqus_thread" data-disqus-identifier="3696223 https://www.apkmirror.com/?post_type=app_release&#038;p=3696223" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F91%2F62d1f58dc9532.png&w=32&h=32&q=100" alt="Xiaomi Messaging 13.3.8.10"><span class="bubble "><a href="/apk/xiaomi-inc/messaging-3/messaging-3-13-3-8-10-release/#disqus_thread" data-disqus-identifier="3707983 https://www.apkmirror.com/?post_type=app_release&#038;p=3707983" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Google App 13.27.8" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/google-search/google-search-13-27-8-release/">Google App 13.27.8</a> </h5>
+<h5 title="Xiaomi Messaging 13.3.8.10" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/xiaomi-inc/messaging-3/messaging-3-13-3-8-10-release/">Xiaomi Messaging 13.3.8.10</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
 <span style="padding-right:12px;" class="colorLightBlack">1.1K</span>
@@ -1909,7 +2155,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/google-search/google-search-13-27-8-release/">
+<a class="downloadLink" href="/apk/xiaomi-inc/messaging-3/messaging-3-13-3-8-10-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -1923,11 +2169,37 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div class="table-row">
 <div style="width: 56px;" class="table-cell">
 <div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2021%2F12%2F34%2F61ba61fa495cb.png&w=32&h=32&q=100" alt="Xiaomi System Launcher RELEASE-4.38.0.5168-07081659"><span class="bubble "><a href="/apk/xiaomi-inc/miui-launcher/miui-launcher-release-4-38-0-5168-07081659-release/#disqus_thread" data-disqus-identifier="3708633 https://www.apkmirror.com/?post_type=app_release&#038;p=3708633" title="View comments"></a></span> </div>
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F44%2F62d105ad90edc.png&w=32&h=32&q=100" alt="Instagram 244.0.0.5.110 beta"><span class="bubble "><a href="/apk/instagram/instagram-instagram/instagram-instagram-244-0-0-5-110-release/#disqus_thread" data-disqus-identifier="3705518 https://www.apkmirror.com/?post_type=app_release&#038;p=3705518" title="View comments"></a></span> </div>
 </div>
 <div class="table-cell">
-<h5 title="Xiaomi System Launcher RELEASE-4.38.0.5168-07081659" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/xiaomi-inc/miui-launcher/miui-launcher-release-4-38-0-5168-07081659-release/">Xiaomi System Launcher RELEASE-4.38.0.5168-07081659</a> </h5>
+<h5 title="Instagram 244.0.0.5.110 beta" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/instagram/instagram-instagram/instagram-instagram-244-0-0-5-110-release/">Instagram 244.0.0.5.110 beta</a> </h5>
+</div>
+<div style="width: 50px; text-align: right;" class="table-cell">
+<span style="padding-right:12px;" class="colorLightBlack">1.1K</span>
+</div>
+<div style="width: 22px;" class="table-cell">
+<div class="iconsBox one-icon">
+<div class="downloadIconPositioning">
+<a class="downloadLink" href="/apk/instagram/instagram-instagram/instagram-instagram-244-0-0-5-110-release/">
+<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="appRow">
+<div class="table-row">
+<div style="width: 56px;" class="table-cell">
+<div class="bubble-wrap p-relative">
+<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F06%2F17%2F62bb24d3e40ad.png&w=32&h=32&q=100" alt="Amazon Prime Video 3.0.327"><span class="bubble "><a href="/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-327-release/#disqus_thread" data-disqus-identifier="3644266 https://www.apkmirror.com/?post_type=app_release&#038;p=3644266" title="View comments"></a></span> </div>
+</div>
+<div class="table-cell">
+<h5 title="Amazon Prime Video 3.0.327" class="appRowTitle wrapText marginZero block-on-mobile">
+<a class="fontBlack" href="/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-327-release/">Amazon Prime Video 3.0.327</a> </h5>
 </div>
 <div style="width: 50px; text-align: right;" class="table-cell">
 <span style="padding-right:12px;" class="colorLightBlack">1K</span>
@@ -1935,85 +2207,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 <div style="width: 22px;" class="table-cell">
 <div class="iconsBox one-icon">
 <div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/xiaomi-inc/miui-launcher/miui-launcher-release-4-38-0-5168-07081659-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2FGalaxy-Enhance-X_round.png&w=32&h=32&q=100" alt="Galaxy Enhance-X: AI Photo Upscaler &amp; Magic Editor 1.0.35"><span class="bubble "><a href="/apk/samsung-electronics-co-ltd/galaxy-enhance-x/galaxy-enhance-x-1-0-35-release/#disqus_thread" data-disqus-identifier="3699869 https://www.apkmirror.com/?post_type=app_release&#038;p=3699869" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="Galaxy Enhance-X: AI Photo Upscaler &amp; Magic Editor 1.0.35" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/samsung-electronics-co-ltd/galaxy-enhance-x/galaxy-enhance-x-1-0-35-release/">Galaxy Enhance-X: AI Photo Upscaler &amp; Magic Editor 1.0.35</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">995</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/samsung-electronics-co-ltd/galaxy-enhance-x/galaxy-enhance-x-1-0-35-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F22%2F62d29488e2004.png&w=32&h=32&q=100" alt="YouTube 17.27.39"><span class="bubble "><a href="/apk/google-inc/youtube/youtube-17-27-39-release/#disqus_thread" data-disqus-identifier="3708722 https://www.apkmirror.com/?post_type=app_release&#038;p=3708722" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="YouTube 17.27.39" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/google-inc/youtube/youtube-17-27-39-release/">YouTube 17.27.39</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">796</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/google-inc/youtube/youtube-17-27-39-release/">
-<svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<div class="appRow">
-<div class="table-row">
-<div style="width: 56px;" class="table-cell">
-<div class="bubble-wrap p-relative">
-<img class="ellipsisText" style="width:32px; height:32px;" width="32" height="32" src="/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fwww.apkmirror.com%2Fwp-content%2Fuploads%2F2022%2F07%2F30%2F62d32583402d2.png&w=32&h=32&q=100" alt="Facebook 376.0.0.5.108 beta"><span class="bubble "><a href="/apk/facebook-2/facebook/facebook-376-0-0-5-108-release/#disqus_thread" data-disqus-identifier="3709060 https://www.apkmirror.com/?post_type=app_release&#038;p=3709060" title="View comments"></a></span> </div>
-</div>
-<div class="table-cell">
-<h5 title="Facebook 376.0.0.5.108 beta" class="appRowTitle wrapText marginZero block-on-mobile">
-<a class="fontBlack" href="/apk/facebook-2/facebook/facebook-376-0-0-5-108-release/">Facebook 376.0.0.5.108 beta</a> </h5>
-</div>
-<div style="width: 50px; text-align: right;" class="table-cell">
-<span style="padding-right:12px;" class="colorLightBlack">260</span>
-</div>
-<div style="width: 22px;" class="table-cell">
-<div class="iconsBox one-icon">
-<div class="downloadIconPositioning">
-<a class="downloadLink" href="/apk/facebook-2/facebook/facebook-376-0-0-5-108-release/">
+<a class="downloadLink" href="/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-327-release/">
 <svg class="icon iconColor download-icon"><use xlink:href="#apkm-icon-download"></use></svg>
 </a>
 </div>
@@ -2032,7 +2226,7 @@ Results for <span style="word-break:break-all">&#8220;com.nianticlabs.pokemongo&
 </div>
 <div class="copyRight">
 Notice a bug? <a target="_blank" href="https://github.com/illogical-robot/apkmirror-public/issues" rel="nofollow">Let us know here.</a><br>
-171 queries | 0.267s | citadel | am <span class="hidden-xs inlineBlock"> | </span><br class="visible-xs-inline hidden-md hidden-sm">
+207 queries | 0.277s | hive | am <span class="hidden-xs inlineBlock"> | </span><br class="visible-xs-inline hidden-md hidden-sm">
 <a href="/apkmirror-com-privacy-policy/">Privacy Policy | </a>
 <span id="apkm_consent_holder"></span>
 <a href="/dmca-copyright-infringement-notification/">DMCA Disclaimer | </a>
@@ -2258,21 +2452,25 @@ Android is a trademark of Google Inc
 <div class="floating-label">What's new (may be shown publicly)</div>
 </div>
 </div>
- <button class="pull-right buttonUpload btn btn-default hidden" id="btnSubmit">Upload</button>
+<button class="pull-right buttonUpload btn btn-default hidden" id="btnSubmit">Upload</button>
 <button id="btnDismiss" class="pull-right btn btn-default hidden" data-dismiss="modal">Close</button>
 </div>
 </div>
 </div>
-</div></div></div><script type='text/javascript' data-src='https://www.apkmirror.com/wp-content/plugins/AppManager/js/vanillaSelectBox.js?ver=1642702440' id='multiselect-js-promise-js'></script>
-<script type='text/javascript' data-src='https://www.apkmirror.com/wp-content/plugins/AppManager/js/nouislider.js?ver=1618517004' id='nouislider-js-promise-js'></script>
-<script type='text/javascript' async="async" src='https://www.apkmirror.com/wp-content/plugins/AppManager/js/appmanager.js?ver=1655852413' id='appmanager_javascript-async-js'></script>
+</div></div></div><script type='text/javascript' async="async" src='https://www.apkmirror.com/wp-content/plugins/AppManager/js/appmanager.js?ver=1655852413' id='appmanager_javascript-async-js'></script>
 <script type='text/javascript' src='https://www.apkmirror.com/wordpress/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
 <script type='text/javascript' src='https://www.apkmirror.com/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='disqus_embed-js-extra'>
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.22"},"disqusIdentifier":"3692378 https:\/\/www.apkmirror.com\/?post_type=app_release&p=3692378","disqusShortname":"apkmirror","disqusTitle":"Pok\u00e9mon GO 0.243.0","disqusUrl":"https:\/\/apkmirror.com\/apk\/niantic-inc\/pokemon-go\/pokemon-go-0-243-0-release\/","postId":"3692378"};
+/* ]]> */
+</script>
+<script type='text/javascript' data-src='https://www.apkmirror.com/wp-content/plugins/disqus-comment-system/public/js/comment_embed.js?ver=3.0.22' id='disqus_embed-js'></script>
 <script src='https://stats.wp.com/e-202228.js' defer></script>
 <script>
 	_stq = window._stq || [];
-	_stq.push([ 'view', {v:'ext',j:'1:11.0',blog:'165057178',post:'0',tz:'0',srv:'apkmirror.com'} ]);
-	_stq.push([ 'clickTrackerInit', '165057178', '0' ]);
+	_stq.push([ 'view', {v:'ext',j:'1:11.0',blog:'165057178',post:'3692378',tz:'0',srv:'apkmirror.com'} ]);
+	_stq.push([ 'clickTrackerInit', '165057178', '3692378' ]);
 </script>
 <script>
 function b2a(a){var b,c=0,l=0,f="",g=[];if(!a)return a;do{var e=a.charCodeAt(c++);var h=a.charCodeAt(c++);var k=a.charCodeAt(c++);var d=e<<16|h<<8|k;e=63&d>>18;h=63&d>>12;k=63&d>>6;d&=63;g[l++]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(e)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(h)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(k)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(d)}while(c<
@@ -2330,7 +2528,7 @@ n&&(n="");null==p&&(p="");null!=f&&e.each(function(){var d=a(this).closest("div.
 m)return k=!0,!1}),t){case "B":k&&(c=!1);break;case "W":k||(c=!1)}a(this).css({visibility:"",position:"",width:"",height:"","z-index":""});h=a(this).prev(".ai-debug-bar");h.find(".ai-debug-name.ai-ip-country").text(q);h.find(".ai-debug-name.ai-ip-status").text(c?ai_front.visible:ai_front.hidden);c?(d.css({visibility:""}),d.hasClass("ai-remove-position")&&d.css({position:""}),"undefined"!=typeof a(this).data("code")&&(h=b64d(a(this).data("code")),0!=a(this).closest("head").length?(a(this).after(h),
 a(this).remove()):a(this).append(h),a(this).attr("data-code",""),ai_process_element(this))):(a(this).hide(),d.length&&(d.removeAttr("data-ai").removeClass("ai-track"),d.find(".ai-debug-block").length?(d.css({visibility:""}).removeClass("ai-close"),d.hasClass("ai-remove-position")&&d.css({position:""}),"undefined"!=typeof a(this).data("code")&&(d.removeClass("ai-list-block"),d.removeClass("ai-list-block-filter"),d.prev().hasClass("ai-debug-info")&&d.prev().remove())):-1==d.attr("style").indexOf("height:")&&
 d.hide()));d.removeClass("ai-list-block-ip")})}}ai_process_ip_addresses=function(e){e=null==e?a("div.ai-ip-data, meta.ai-ip-data"):e.filter(".ai-ip-data");if(e.length)if("undefined"!=typeof ai_ip_data)v(e);else if("undefined"==typeof ai_ip_data_requested){ai_ip_data_requested=!0;var c="/wordpress/wp-admin/admin-ajax.php?action=ai_ajax&ip-data=ip-address-country-city",f=u("ai-debug-ip-address");null!=f&&(c+="&ai-debug-ip-address="+f);f=u("ai-debug-country");null!=f&&(c+="&ai-debug-country="+f);a.ajax({url:c,
-type:"post",data:{ai_check:"41cbe3d371",ai_version:(new Date).getTime()+"-"+Math.round(1E5*Math.random())},async:!0}).done(function(g){ai_ip_data=g;if(""==g){var l="Ajax request returned empty data, geo-targeting disabled";console.error(l);"undefined"!=typeof ai_js_errors&&ai_js_errors.push([l,c,0])}else try{JSON.parse(g)}catch(n){l="Ajax call returned invalid data, geo-targeting disabled",console.error(l,g),"undefined"!=typeof ai_js_errors&&ai_js_errors.push([l,c,0])}e=a("div.ai-ip-data, meta.ai-ip-data");
+type:"post",data:{ai_check:"f7bb39801e",ai_version:(new Date).getTime()+"-"+Math.round(1E5*Math.random())},async:!0}).done(function(g){ai_ip_data=g;if(""==g){var l="Ajax request returned empty data, geo-targeting disabled";console.error(l);"undefined"!=typeof ai_js_errors&&ai_js_errors.push([l,c,0])}else try{JSON.parse(g)}catch(n){l="Ajax call returned invalid data, geo-targeting disabled",console.error(l,g),"undefined"!=typeof ai_js_errors&&ai_js_errors.push([l,c,0])}e=a("div.ai-ip-data, meta.ai-ip-data");
 e.length&&v(e)}).fail(function(g,l,n){a("div.ai-ip-data").each(function(){a(this).css({display:"none",visibility:"",position:"",width:"",height:"","z-index":""}).removeClass("ai-ip-data").hide()})})}};a(document).ready(function(e){setTimeout(function(){ai_process_ip_addresses()},5)})});
 function ai_process_element(a){setTimeout(function(){"function"==typeof ai_process_rotations_in_element&&ai_process_rotations_in_element(a);"function"==typeof ai_process_lists&&ai_process_lists(jQuery(".ai-list-data",a));"function"==typeof ai_process_ip_addresses&&ai_process_ip_addresses(jQuery(".ai-ip-data",a));"function"==typeof ai_process_filter_hooks&&ai_process_filter_hooks(jQuery(".ai-filter-check",a));"function"==typeof ai_adb_process_blocks&&ai_adb_process_blocks(a);"function"==typeof ai_process_impressions&&
 1==ai_tracking_finished&&ai_process_impressions();"function"==typeof ai_install_click_trackers&&1==ai_tracking_finished&&ai_install_click_trackers();"function"==typeof ai_install_close_buttons&&ai_install_close_buttons(document)},5)};
@@ -2350,7 +2548,7 @@ h)},2500);else{ai_cookie=ai_load_cookie();for(var c in ai_cookie)if(parseInt(g)=
 ai_check_data[c].hasOwnProperty("cpt")&&ai_check_data[c].hasOwnProperty("ct")?ai_cookie.hasOwnProperty(c)&&ai_cookie[c].hasOwnProperty("ct")&&(d=new Date,f=ai_cookie[c].ct-Math.round(d.getTime()/1E3),0>=f&&(d=Math.round(d.getTime()/1E3),ai_set_cookie(c,"cpt",ai_check_data[c].cpt-1),ai_set_cookie(c,"ct",Math.round(d+86400*ai_check_data[c].ct)))):(ai_cookie.hasOwnProperty(c)&&ai_cookie[c].hasOwnProperty("cpt")&&ai_set_cookie(c,"cpt",""),ai_cookie.hasOwnProperty(c)&&ai_cookie[c].hasOwnProperty("ct")&&
 ai_set_cookie(c,"ct",""));ai_cookie.hasOwnProperty("G")&&ai_cookie.G.hasOwnProperty("cpt")&&(f=ai_cookie.G.cpt,0<f?(ai_set_cookie("G","cpt",f-1),1==f&&(f=e("span[data-ai-block="+g+"]").data("ai-cfp-time"),d=new Date,d=Math.round(d.getTime()/1E3),q=ai_cookie.G.ct,ai_set_cookie(g,"x",q),k=e("span[data-ai-block="+g+"]").closest("div[data-ai]"),setTimeout(function(){k.closest("div[data-ai]").remove()},75),"undefined"!=typeof f&&(q=d+86400*f,ai_set_cookie(g,"x",q),e("span.ai-cfp").each(function(r){r=e(this).data("ai-block");
 var u=e(this);setTimeout(function(){u.closest("div[data-ai]").remove()},50);ai_set_cookie(r,"x",q)})))):ai_check_data.hasOwnProperty("G")&&ai_check_data.G.hasOwnProperty("cpt")&&ai_check_data.G.hasOwnProperty("ct")?ai_cookie.hasOwnProperty("G")&&ai_cookie.G.hasOwnProperty("ct")&&(d=new Date,f=ai_cookie.G.ct-Math.round(d.getTime()/1E3),0>=f&&(d=Math.round(d.getTime()/1E3),ai_set_cookie("G","cpt",ai_check_data.G.cpt-1),ai_set_cookie("G","ct",Math.round(d+86400*ai_check_data.G.ct)))):(ai_cookie.hasOwnProperty("G")&&
-ai_cookie.G.hasOwnProperty("cpt")&&ai_set_cookie("G","cpt",""),ai_cookie.hasOwnProperty("G")&&ai_cookie.G.hasOwnProperty("ct")&&ai_set_cookie("G","ct","")));z&&"undefined"===typeof ai_internal_tracking_no_clicks&&e.ajax({url:E,type:"post",data:{action:"ai_ajax",ai_check:"41cbe3d371",click:g,version:a,type:h},async:!0}).done(function(r){r=r.trim();""!=r&&(r=JSON.parse(r),"undefined"!=typeof r["#"]&&r["#"]==g&&(ai_cookie=ai_load_cookie(),setTimeout(function(){e("span[data-ai-block="+g+"]").closest("div[data-ai]").remove()},
+ai_cookie.G.hasOwnProperty("cpt")&&ai_set_cookie("G","cpt",""),ai_cookie.hasOwnProperty("G")&&ai_cookie.G.hasOwnProperty("ct")&&ai_set_cookie("G","ct","")));z&&"undefined"===typeof ai_internal_tracking_no_clicks&&e.ajax({url:E,type:"post",data:{action:"ai_ajax",ai_check:"f7bb39801e",click:g,version:a,type:h},async:!0}).done(function(r){r=r.trim();""!=r&&(r=JSON.parse(r),"undefined"!=typeof r["#"]&&r["#"]==g&&(ai_cookie=ai_load_cookie(),setTimeout(function(){e("span[data-ai-block="+g+"]").closest("div[data-ai]").remove()},
 50),r=Math.round((new Date).getTime()/1E3)+43200,ai_cookie.hasOwnProperty(g)&&ai_cookie[g].hasOwnProperty("x")||ai_set_cookie(g,"x",r)))});if(A&&"undefined"===typeof ai_external_tracking_no_clicks){var w=b[2],t=b[3];l("click",g,w,b[4],a,t,!1)}"function"==typeof ai_click_action&&ai_click_action(g,w,a,t)}}function n(){ai_check_data={};if("undefined"==typeof ai_iframe){ai_cookie=ai_load_cookie();e(".ai-check-block").each(function(){var a=e(this).data("ai-block"),c=e(this).data("ai-delay-pv"),p=e(this).data("ai-every-pv"),
 f=e(this).data("ai-hash"),d=e(this).data("ai-max-imp"),q=e(this).data("ai-limit-imp-per-time"),k=e(this).data("ai-limit-imp-time"),w=e(this).data("ai-max-clicks"),t=e(this).data("ai-limit-clicks-per-time"),r=e(this).data("ai-limit-clicks-time"),u=e(this).data("ai-global-limit-clicks-per-time"),x=e(this).data("ai-global-limit-clicks-time");if("undefined"!=typeof c&&0<c){ai_check_data.hasOwnProperty(a)||(ai_check_data[a]={});ai_check_data[a].d=c;var B="";ai_cookie.hasOwnProperty(a)&&ai_cookie[a].hasOwnProperty("d")&&
 (B=ai_cookie[a].d);""===B&&ai_set_cookie(a,"d",c-1)}"undefined"!=typeof p&&2<=p&&(ai_check_data.hasOwnProperty(a)||(ai_check_data[a]={}),"undefined"!==typeof ai_delay_showing_pageviews||ai_cookie.hasOwnProperty(a)&&ai_cookie[a].hasOwnProperty("d")||(ai_cookie.hasOwnProperty(a)||(ai_cookie[a]={}),ai_cookie[a].d=0),ai_check_data[a].e=p);if("undefined"!=typeof d&&0<d){if(ai_check_data.hasOwnProperty(a)||(ai_check_data[a]={}),ai_check_data[a].i=d,ai_check_data[a].h=f,p=c="",ai_cookie.hasOwnProperty(a)&&
@@ -2361,7 +2559,7 @@ ai_cookie[a].hasOwnProperty("x")||ai_set_cookie(a,"h",""));if("undefined"!=typeo
 (c=new Date,c=Math.round(c.getTime()/1E3),f<=c&&(ai_set_cookie(a,"cpt",t),ai_set_cookie(a,"ct",Math.round(c+86400*r))))}else ai_cookie.hasOwnProperty(a)&&(ai_cookie[a].hasOwnProperty("cpt")&&ai_set_cookie(a,"cpt",""),ai_cookie[a].hasOwnProperty("ct")&&ai_set_cookie(a,"ct",""));if("undefined"!=typeof u&&0<u&&"undefined"!=typeof x&&0<x){ai_check_data.hasOwnProperty("G")||(ai_check_data.G={});ai_check_data.G.cpt=u;ai_check_data.G.ct=x;a=t="";ai_cookie.hasOwnProperty("G")&&(ai_cookie.G.hasOwnProperty("cpt")&&
 (t=ai_cookie.G.cpt),ai_cookie.G.hasOwnProperty("ct")&&(a=ai_cookie.G.ct));if(""===t||""===a)ai_set_cookie("G","cpt",u),c=new Date,c=Math.round(c.getTime()/1E3),ai_set_cookie("G","ct",Math.round(c+86400*x));0<a&&(c=new Date,c=Math.round(c.getTime()/1E3),a<=c&&(ai_set_cookie("G","cpt",u),ai_set_cookie("G","ct",Math.round(c+86400*x))))}else ai_cookie.hasOwnProperty("G")&&(ai_cookie.G.hasOwnProperty("cpt")&&ai_set_cookie("G","cpt",""),ai_cookie.G.hasOwnProperty("ct")&&ai_set_cookie("G","ct",""))});e(".ai-check-block").removeClass("ai-check-block");
 for(var b in ai_cookie)for(var h in ai_cookie[b])if("d"==h){var g=ai_cookie[b][h];0<g?ai_set_cookie(b,"d",g-1):ai_check_data.hasOwnProperty(b)&&ai_check_data[b].hasOwnProperty("e")?ai_set_cookie(b,"d",ai_check_data[b].e-1):ai_check_data.hasOwnProperty(b)&&ai_check_data[b].hasOwnProperty("d")||ai_set_cookie(b,"d","")}}}function v(){Array.prototype.forEach.call(document.querySelectorAll("[data-ai]"),function(p){for(var f="",d=1;9>=d;d++)if(p.hasAttribute("data-ai-"+d))f=p.getAttribute("data-ai-"+d);
-else break;""!=f&&p.setAttribute("data-ai",f)});if(F){var b=document.documentElement.clientWidth,h=window.innerWidth,g=b<h?h:b,a=0;e.each(G,function(p,f){if(g>=f)return a=H[p],!1});b=jQuery(b64d("Ym9keQ==")).attr(b64d ('ZGF0YS1kYXRhLW1hc2s='));if("string"===typeof b)var c=b==b64d("bWFzaw==");"string"===typeof b&&"boolean"===typeof c&&c&&(A&&l("ad blocking",0,I[a-1],0,0,"",!0),a|=128);D=[0,a]}n();ai_process_impressions();0!=D.length&&z&&e.ajax({url:E,type:"post",data:{action:"ai_ajax",ai_check:"41cbe3d371",views:[0],
+else break;""!=f&&p.setAttribute("data-ai",f)});if(F){var b=document.documentElement.clientWidth,h=window.innerWidth,g=b<h?h:b,a=0;e.each(G,function(p,f){if(g>=f)return a=H[p],!1});b=jQuery(b64d("Ym9keQ==")).attr(b64d ('ZGF0YS1kYXRhLW1hc2s='));if("string"===typeof b)var c=b==b64d("bWFzaw==");"string"===typeof b&&"boolean"===typeof c&&c&&(A&&l("ad blocking",0,I[a-1],0,0,"",!0),a|=128);D=[0,a]}n();ai_process_impressions();0!=D.length&&z&&e.ajax({url:E,type:"post",data:{action:"ai_ajax",ai_check:"f7bb39801e",views:[0],
 versions:[a]},async:!0}).done(function(p){});ai_tracking_finished=!0}var z=1,A=0,F=0,C=0,G=[993,481,0],H=[1,5,6],I=JSON.parse(b64d("WyJzaG93T25EZXNrdG9wIiwic2hvd09uVGFibGV0Iiwic2hvd09uTW9iaWxlIl0=")),E="/wordpress/wp-admin/admin-ajax.php";0&&(E+="?ai-debug-tracking=1");Number.isInteger=Number.isInteger||function(b){return"number"===typeof b&&isFinite(b)&&Math.floor(b)===b};ai_install_standard_click_trackers=function(b){"undefined"==
 typeof b&&(b=e("body"));b=e("div.ai-track[data-ai]:visible",b);var h=e();b.each(function(){0==e(this).find("div.ai-lazy, div.ai-manual, div.ai-list-manual, div.ai-manual-auto, div.ai-delayed").length&&(h=h.add(e(this)))});b=h;b.removeClass("ai-track");b=b.find("a");0!=b.length&&(C?b.click(function(){for(var g=e(this).closest("div[data-ai]");"undefined"!=typeof g.attr("data-ai");){var a=JSON.parse(b64d(g.attr("data-ai")));"undefined"!==typeof a&&a.constructor===Array&&Number.isInteger(a[1])&&!g.hasClass("clicked")&&
 (g.addClass("clicked"),m(a,"a.click"));g=g.parent().closest("div[data-ai]")}}):b.click(function(){for(var g=e(this).closest("div[data-ai]");"undefined"!=typeof g.attr("data-ai");){var a=JSON.parse(b64d(g.attr("data-ai")));"undefined"!==typeof a&&a.constructor===Array&&Number.isInteger(a[1])&&(m(a,"a.click"),clicked=!0);g=g.parent().closest("div[data-ai]")}}))};ai_install_click_trackers=function(b){"undefined"==typeof b&&(b=e("body"));if(C){var h=e("div.ai-track[data-ai]:visible, div.ai-rotate[data-info]:visible div.ai-track[data-ai]",
@@ -2372,7 +2570,7 @@ wrapper:null,ai_data:null,block:null,version:null})}ai_install_standard_click_tr
 typeof e(this).attr("data-ai")){var k=JSON.parse(b64d(e(this).attr("data-ai")));if("undefined"!==typeof k&&k.constructor===Array){var w=0,t=e(this).find("div.ai-rotate[data-info]");1==t.length&&(w=JSON.parse(b64d(t.data("info")))[1]);if(Number.isInteger(k[0])&&0!=k[0]&&Number.isInteger(k[1])){t=0;var r=e(this).hasClass("ai-no-tracking"),u=jQuery(b64d("Ym9keQ==")).attr(b64d ('ZGF0YS1kYXRhLW1hc2s='));if("string"===typeof u)var x=u==b64d("bWFzaw==");if("string"===typeof u&&"boolean"===typeof x){var B=e(this).outerHeight();
 u=e(this).find(".ai-attributes");u.length&&u.each(function(){B>=e(this).outerHeight()&&(B-=e(this).outerHeight())});u=e(this).find(".ai-code");u.length&&(B=0,u.each(function(){B+=e(this).outerHeight()}));x&&0===B&&(t=128)}0!=e(this).find("div.ai-lazy, div.ai-manual, div.ai-list-manual, div.ai-manual-auto, div.ai-delayed").length&&(r=!0);if(!r)if(0==w)h.push(k[0]),g.push(k[1]|t),a.push(k[2]),c.push(k[3]),p.push(k[4]);else for(x=1;x<=w;x++)h.push(k[0]),g.push(x|t),a.push(k[2]),c.push(k[3]),p.push(k[4])}}}});
 ai_cookie=ai_load_cookie();for(var d in ai_cookie)if(h.includes(parseInt(d)))for(var q in ai_cookie[d])"i"==q?(b=ai_cookie[d][q],0<b&&(1==b?(b=new Date,b=Math.round(b.getTime()/1E3)+604800,ai_set_cookie(d,"i",-b)):ai_set_cookie(d,"i",b-1))):"ipt"==q&&(b=ai_cookie[d][q],0<b?ai_set_cookie(d,"ipt",b-1):ai_check_data.hasOwnProperty(d)&&ai_check_data[d].hasOwnProperty("ipt")&&ai_check_data[d].hasOwnProperty("it")?ai_cookie.hasOwnProperty(d)&&ai_cookie[d].hasOwnProperty("it")&&(b=new Date,0>=ai_cookie[d].it-
-Math.round(b.getTime()/1E3)&&(b=Math.round(b.getTime()/1E3),ai_set_cookie(d,"ipt",ai_check_data[d].ipt),ai_set_cookie(d,"it",Math.round(b+86400*ai_check_data[d].it)))):(ai_cookie.hasOwnProperty(d)&&ai_cookie[d].hasOwnProperty("ipt")&&ai_set_cookie(d,"ipt",""),ai_cookie.hasOwnProperty(d)&&ai_cookie[d].hasOwnProperty("it")&&ai_set_cookie(d,"it","")));if(h.length&&(z&&"undefined"===typeof ai_internal_tracking_no_impressions&&(D=[],e.ajax({url:E,type:"post",data:{action:"ai_ajax",ai_check:"41cbe3d371",
+Math.round(b.getTime()/1E3)&&(b=Math.round(b.getTime()/1E3),ai_set_cookie(d,"ipt",ai_check_data[d].ipt),ai_set_cookie(d,"it",Math.round(b+86400*ai_check_data[d].it)))):(ai_cookie.hasOwnProperty(d)&&ai_cookie[d].hasOwnProperty("ipt")&&ai_set_cookie(d,"ipt",""),ai_cookie.hasOwnProperty(d)&&ai_cookie[d].hasOwnProperty("it")&&ai_set_cookie(d,"it","")));if(h.length&&(z&&"undefined"===typeof ai_internal_tracking_no_impressions&&(D=[],e.ajax({url:E,type:"post",data:{action:"ai_ajax",ai_check:"f7bb39801e",
 views:h,versions:g},async:!0}).done(function(k){k=k.trim();if(""!=k&&(k=JSON.parse(k),"undefined"!=typeof k["#"])){ai_cookie=ai_load_cookie();var w=Math.round((new Date).getTime()/1E3)+43200,t=[],r;for(r in k["#"])ai_cookie.hasOwnProperty(k["#"][r])&&ai_cookie[k["#"][r]].hasOwnProperty("x")||ai_set_cookie(k["#"][r],"x",w);setTimeout(function(){for(index=0;index<t.length;++index)e("span[data-ai-block="+t[index]+"]").closest("div[data-ai]").remove()},50)}})),A&&"undefined"===typeof ai_external_tracking_no_impressions))for(d=
 0;d<h.length;d++)0!=h[d]&&l("impression",h[d],a[d],p[d],g[d],c[d],!0)};jQuery(window).on("load",function(){"undefined"==typeof ai_delay_tracking&&(ai_delay_tracking=0);setTimeout(v,ai_delay_tracking+1400);setTimeout(ai_install_click_trackers,ai_delay_tracking+1500)})});
 
@@ -2436,6 +2634,6 @@ ai_js_code = true;
 
 <script src="//instant.page/5.1.0" type="module" defer integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"72c2f1eefc6a5ca0","token":"d9c7bb20e47748bba6112071835597f3","version":"2022.6.0","si":100}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"72bd70018e3982a5","token":"d9c7bb20e47748bba6112071835597f3","version":"2022.6.0","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>

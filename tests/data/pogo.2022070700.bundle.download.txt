@@ -1,0 +1,10 @@
+<script>
+    var tabadcode = {};
+    APKM.docReady(function(){
+        document.querySelector('#filedownload').submit();
+    });
+</script>
+<form id="filedownload" method="GET" action="/wp-content/themes/APKMirror/download.php">
+<input type="hidden" name="id" value="3694845" />
+<input type="hidden" name="key" value="6534b93ad807a70f7aa1b9eebfba23d586876b29" />
+</form>
