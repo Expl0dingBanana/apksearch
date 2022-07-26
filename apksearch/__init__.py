@@ -1,8 +1,8 @@
 import logging
 
-from .search import package_search, package_search_async
+from .search import package_search_match, generate_download_url
 
-__all__ = ["package_search", "package_search_async"]
+__all__ = ["package_search_match", "generate_download_url"]
 
 
 logger = logging.getLogger(__name__)
