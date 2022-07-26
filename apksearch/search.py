@@ -62,7 +62,7 @@ async def package_search_async(packages: List[str]) -> Dict[str, PackageBase]:
     return package_defs
 
 
-async def package_search_match(package_url: [str], version: str) -> PackageVersion:
+async def package_search_match(package_url: [str], versions: List[str]) -> PackageBase:
     """Perform a targeted search on a root page
 
     :param package_url: URL to the package
@@ -71,13 +71,14 @@ async def package_search_match(package_url: [str], version: str) -> PackageVersi
     package_defs = await execute_package_page([package_url])
     package_name = list(package_defs.keys())[0]
     for pkg_version in list(package_defs[package_name].versions.keys())[:]:
-        if pkg_version != version:
+        if pkg_version not in versions:
             del package_defs[package_name].versions[pkg_version]
-    if len(package_defs[package_name].versions) != 1:
-        raise RuntimeError("Version {} not found for {}".format(version, package_name))
+    if len(package_defs[package_name].versions) != len(versions):
+        diff = set(versions).difference(set(package_defs[package_name].versions))
+        raise RuntimeError("{} is missing {}".format(package_name, diff))
     release_defs = await execute_release_info(package_defs)
     parsing.process_release_result(release_defs)
-    return package_defs[package_name].versions[version]
+    return package_defs[package_name]
 
 
 async def generate_download_url(variant: PackageVariant) -> str:

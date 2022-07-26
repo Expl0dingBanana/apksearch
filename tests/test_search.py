@@ -39,6 +39,7 @@ async def test_execute_package_page():
 
 @pytest.mark.asyncio
 async def test_package_search_match():
+    versions = ["0.243.0", "0.241.0"]
     with aioresponses() as mocked:
         mocked.get(
             "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/",
@@ -50,9 +51,17 @@ async def test_package_search_match():
             status=200,
             body=get_test_contents("pogo_0.243.0.html")
         )
-        results = await search.package_search_match("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/", "0.243.0")
-    assert "armeabi-v7a" in results.arch
-    assert "arm64-v8a" in results.arch
+        mocked.get(
+            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-241-0-release/",
+            status=200,
+            body=get_test_contents("pogo_0.243.0.html")
+        )
+        results = await search.package_search_match("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/", versions=versions)
+    assert len(versions) == len(results.versions)
+    for version in versions:
+        assert version in results.versions
+        assert "armeabi-v7a" in results.versions[version].arch
+        assert "arm64-v8a" in results.versions[version].arch
 
 
 @pytest.mark.asyncio
