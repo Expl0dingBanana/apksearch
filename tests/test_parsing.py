@@ -1,13 +1,7 @@
 import os
 import pytest
 from apksearch import entities, parsing
-
-
-def get_test_contents(filename):
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    path = os.path.join(dir_path, "web_results", filename)
-    with open(path, "rb") as fh:
-        return fh.read()
+from . import get_test_contents
 
 
 def build_test(filename, base_entity):

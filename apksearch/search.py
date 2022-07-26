@@ -9,7 +9,7 @@ import aiohttp
 from . import parsing
 from .entities import PackageBase, PackageVariant, PackageVersion
 
-__all__ = ["package_search", "package_search_async"]
+__all__ = ["package_search_match", "generate_download_url"]
 
 
 QUERY_URL: str = "https://www.apkmirror.com"
@@ -20,7 +20,7 @@ QUERY_PARAMS: Dict[str, str] = {
     "minapi": "true",
 }
 HEADERS = {
-    "user-agent": "apksearch APKMirrorSearcher/0.0.3",
+    "user-agent": "apksearch APKMirrorSearcher/0.0.4",
 }
 
 logger = logging.getLogger(__name__)
@@ -62,9 +62,41 @@ async def package_search_async(packages: List[str]) -> Dict[str, PackageBase]:
     return package_defs
 
 
+async def package_search_match(package_url: [str], version: str) -> PackageVersion:
+    """Perform a targeted search on a root page
 
-def search_primary_pages(packages: List[str]) -> Dict[str, PackageBase]:
-    """Performs a search against APKMirror and get exact match packages"""
+    :param package_url: URL to the package
+    :param version: Version string to process
+    """
+    package_defs = await execute_package_page([package_url])
+    package_name = list(package_defs.keys())[0]
+    for pkg_version in list(package_defs[package_name].versions.keys())[:]:
+        if pkg_version != version:
+            del package_defs[package_name].versions[pkg_version]
+    if len(package_defs[package_name].versions) != 1:
+        raise RuntimeError("Version {} not found for {}".format(version, package_name))
+    release_defs = await execute_release_info(package_defs)
+    parsing.process_release_result(release_defs)
+    return package_defs[package_name].versions[version]
+
+
+async def generate_download_url(variant: PackageVariant) -> str:
+    """Generates a packages temporary download URL
+
+    :param variant: Variant to determine URL
+    """
+    loop = asyncio.get_running_loop()
+    results = await _perform_basic_query(loop, [variant.variant_info])
+    variant_defs = {
+        variant: results[0]
+    }
+    parsing.process_variant_result(variant_defs)
+    results = await _perform_basic_query(loop, [variant.variant_download_page])
+    download_results = {
+        variant: results[0]
+    }
+    parsing.process_variant_download_result(download_results)
+    return variant.download_url
 
 
 async def execute_package_search(packages: List[str]) -> List[str]:
@@ -79,6 +111,16 @@ async def execute_package_search(packages: List[str]) -> List[str]:
     param_list: List[str] = _generate_params_list(packages)
     loop = asyncio.get_running_loop()
     return await _perform_search(loop, param_list)
+
+
+async def execute_package_page(packages: List[str]) -> Dict[str, PackageBase]:
+    """Query all root package pages
+
+    :param packages: List of root package pages to query
+    """
+    loop = asyncio.get_running_loop()
+    results = await _perform_basic_query(loop, packages)
+    return parsing.process_package_page(results)
 
 
 async def execute_release_info(packages: Dict[str, PackageBase]) -> Dict[PackageVersion, str]:
@@ -128,6 +170,17 @@ async def _perform_search(loop, query_params: List[str]):
         return results
 
 
+async def _perform_basic_query(loop, urls: List[str]):
+    async with aiohttp.ClientSession(loop=loop) as session:
+        required_urls = [_fetch_one(session, url, {}) for url in urls]
+        logger.info("About to query %s packages", len(required_urls))
+        results = await asyncio.gather(
+            *required_urls,
+            return_exceptions=True,
+        )
+        return results
+
+
 async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, PackageVariant]]):
     if len(requests) == 0:
         return []
@@ -136,7 +189,7 @@ async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, Packag
         url_attr = "link"
     else:
         identifier = "variants"
-        url_attr = "download_page"
+        url_attr = "variant_download_page"
     async with aiohttp.ClientSession(loop=loop) as session:
         tasks = {}
         logger.info("About to query %s %s", len(requests), identifier)
