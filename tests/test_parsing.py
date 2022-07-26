@@ -1,240 +1,159 @@
 import os
-
+import pytest
 from apksearch import entities, parsing
 
 
+def get_test_contents(filename):
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    path = os.path.join(dir_path, "web_results", filename)
+    with open(path, "rb") as fh:
+        return fh.read()
+
+
 def build_test(filename, base_entity):
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    path = os.path.join(dir_path, "data", filename)
-    with open(path, "rb") as fh:
-        return {base_entity: fh.read()}
+    return {base_entity: get_test_contents(filename)}
 
 
-def test_process_search_result():
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    path = os.path.join(dir_path, "data", "search_result.txt")
-    pogo_galaxy = {
-        "0.203.1": entities.PackageVersion(
-            (
-                "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon"
-                "-go-samsung-galaxy-apps-version-0-203-1-release/"
-            )
-        ),
-        "0.203.0": entities.PackageVersion(
-            (
-                "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go"
-                "-samsung-galaxy-apps-version-0-203-0-release/"
-            )
-        ),
-        "0.201.1": entities.PackageVersion(
-            (
-                "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go"
-                "-samsung-galaxy-apps-version-0-201-1-release/"
-            )
-        ),
-        "0.201.0": entities.PackageVersion(
-            (
-                "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go"
-                "-samsung-galaxy-apps-version-0-201-0-release/"
-            )
-        ),
-        "0.199.0": entities.PackageVersion(
-            (
-                "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go"
-                "-samsung-galaxy-apps-version-0-199-0-release/"
-            )
-        ),
-    }
-    pogo = {
-        "0.203.1": entities.PackageVersion(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/"
-        ),
-        "0.203.0": entities.PackageVersion(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-0-release/"
-        ),
-        "0.201.1": entities.PackageVersion(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-201-1-release/"
-        ),
-        "0.201.0": entities.PackageVersion(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-201-0-release/"
-        ),
-        "0.199.0": entities.PackageVersion(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-199-0-release/"
-        ),
-    }
-    expected = {
-        "Pokemon GO": entities.PackageBase(
-            "Pokemon GO",
-            info_page="https://www.apkmirror.com/apk/niantic-inc/pokemon-go/",
-            versions=pogo,
-        ),
-        "Pokemon GO (Samsung Galaxy Apps version)": entities.PackageBase(
-            "Pokemon GO (Samsung Galaxy Apps version)",
-            info_page="https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/",
-            versions=pogo_galaxy,
-        ),
-    }
-    with open(path, "rb") as fh:
-        res = parsing.process_search_result([fh.read()])
-        assert res == expected
-
-
-def test_process_release_result():
-    pogo_samsung = {
-        "0.203.1": entities.PackageVersion(
-            (
-                "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go"
-                "-samsung-galaxy-apps-version-0-203-1-release/"
-            )
-        ),
-    }
-    pogo = {
-        "0.203.1": entities.PackageVersion(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/"
-        ),
-    }
-    results = {}
-    results.update(build_test("pogo.0.203.1.txt", pogo["0.203.1"]))
-    results.update(build_test("pogo_samsung.0.203.1.txt", pogo_samsung["0.203.1"]))
-    parsing.process_release_result(results)
-    expected_pogo = entities.PackageVersion(
-        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/",
-        arch_data={
-            "armeabi-v7a": [
-                entities.PackageVariant(
-                    "APK",
-                    "nodpi",
-                    2021031800,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-                        "-0-203-1-android-apk-download/"
-                    ),
-                ),
-                entities.PackageVariant(
-                    "BUNDLE",
-                    "480dpi",
-                    2021032200,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-                        "-0-203-1-6-android-apk-download/"
-                    ),
-                ),
-                entities.PackageVariant(
-                    "APK",
-                    "nodpi",
-                    2021032200,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-                        "-0-203-1-4-android-apk-download/"
-                    ),
-                ),
-            ],
-            "arm64-v8a": [
-                entities.PackageVariant(
-                    "APK",
-                    "nodpi",
-                    2021031801,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-                        "-0-203-1-2-android-apk-download/"
-                    ),
-                ),
-                entities.PackageVariant(
-                    "BUNDLE",
-                    "480-640dpi",
-                    2021032201,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-                        "-0-203-1-3-android-apk-download/"
-                    ),
-                ),
-                entities.PackageVariant(
-                    "APK",
-                    "nodpi",
-                    2021032201,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-                        "-0-203-1-5-android-apk-download/"
-                    ),
-                ),
-            ],
-        },
-    )
-    expected_pogo_samsung = entities.PackageVersion(
+@pytest.mark.parametrize(
+    "filename,expected", [
         (
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/pokemon-go"
-            "-samsung-galaxy-apps-version-0-203-1-release/"
+            "pogo_0.243.0_32_apk_download.html",
+            "https://apkmirror.com/wp-content/themes/APKMirror/download.php?id=3692376&key=1893849fcf0eaeb278bb3d53c9425a96f190c243&forcebaseapk=true"
         ),
-        arch_data={
-            "armeabi-v7a": [
-                entities.PackageVariant(
-                    "APK",
-                    "nodpi",
-                    2021031800,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/"
-                        "pokemon-go-samsung-galaxy-apps-version-0-203-1-release/pokemon-go-samsung-galaxy-"
-                        "apps-version-0-203-1-android-apk-download/"
-                    ),
-                ),
-            ],
-            "arm64-v8a": [
-                entities.PackageVariant(
-                    "APK",
-                    "nodpi",
-                    2021031801,
-                    download_page=(
-                        "https://www.apkmirror.com/apk/niantic-inc/pokemon-go-samsung-galaxy-apps-version/"
-                        "pokemon-go-samsung-galaxy-apps-version-0-203-1-release/pokemon-go-samsung-galaxy"
-                        "-apps-version-0-203-1-2-android-apk-download/"
-                    ),
-                ),
-            ],
-        },
-    )
-    assert pogo["0.203.1"] == expected_pogo
-    assert pogo_samsung["0.203.1"] == expected_pogo_samsung
+        (
+            "pogo_0.243.0_32_bundle_download.html",
+            "https://apkmirror.com/wp-content/themes/APKMirror/download.php?id=3694845&key=82896f35e2a70709ab00137be28fc968624a661c"
+        ),
+    ]
+)
+def test_generate_download_link(filename, expected):
+    content = get_test_contents(filename)
+    assert parsing.generate_download_link(content) == expected
 
 
-def test_process_variant():
-    variant1 = entities.PackageVariant(
-        "APK",
-        "nodpi",
-        2021031800,
-        download_page=(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-            "-0-203-1-android-apk-download/"
+@pytest.mark.parametrize(
+    "variant,filename,expected", [
+        (
+            entities.PackageVariant(
+                "APK",
+                "nodpi",
+                2022070700,
+                variant_info=(
+                    "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-android-apk-download/"
+                ),
+            ),
+            "pogo_0.243.0_32_apk_download.html",
+            "https://apkmirror.com/wp-content/themes/APKMirror/download.php?id=3692376&key=1893849fcf0eaeb278bb3d53c9425a96f190c243&forcebaseapk=true"
         ),
-    )
-    variant2 = entities.PackageVariant(
-        "BUNDLE",
-        "480dpi",
-        2021032200,
-        download_page=(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/pokemon-go"
-            "-0-203-1-6-android-apk-download/"
+        (
+            entities.PackageVariant(
+                "BUNDLE",
+                "nodpi",
+                2022070700,
+                variant_info=(
+                    "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-3-android-apk-download/"
+                ),
+            ),
+            "pogo_0.243.0_32_bundle_download.html",
+            "https://apkmirror.com/wp-content/themes/APKMirror/download.php?id=3694845&key=82896f35e2a70709ab00137be28fc968624a661c",
         ),
-    )
-    variant3 = entities.PackageVariant(
-        "APK",
-        "nodpi",
-        2021032200,
-        download_page=(
-            "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-203-1-release/"
-            "pokemon-go-0-203-1-4-android-apk-download/"
+        (
+            entities.PackageVariant(
+                "APK",
+                "nodpi",
+                2022070701,
+                variant_info=(
+                    "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-4-android-apk-download/"
+                ),
+            ),
+            "pogo_0.243.0_64_bundle_download.html",
+            "https://apkmirror.com/wp-content/themes/APKMirror/download.php?id=3694846&key=1ba4afa3a8584742f2fcc2ac09dfc6376fb20a07",
+        )
+    ]
+)
+def test_process_variant_download_result(variant, filename, expected):
+    results = {
+        variant: get_test_contents(filename)
+    }
+    parsing.process_variant_download_result(results)
+    assert variant.download_url == expected
+
+
+@pytest.mark.parametrize(
+    "variant,filename,expected", [
+        (
+            entities.PackageVariant(
+                "APK",
+                "nodpi",
+                2022070700,
+                variant_info=(
+                    "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-android-apk-download/"
+                ),
+            ),
+            "pogo_0.243.0_32_apk.html",
+            "https://apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-android-apk-download/download/?key=74cda5696fa78d83b50da3f4fa5c9885d17076a1&forcebaseapk=true"
         ),
-    )
-    results = {}
-    results.update(build_test("pogo.2021031800.apk.txt", variant1))
-    results.update(build_test("pogo.2021032200.bundle.txt", variant2))
-    results.update(build_test("pogo.2021032200.apk.txt", variant3))
+        (
+            entities.PackageVariant(
+                "BUNDLE",
+                "nodpi",
+                2022070700,
+                variant_info=(
+                    "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-3-android-apk-download/"
+                ),
+            ),
+            "pogo_0.243.0_32_bundle.html",
+            "https://apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-3-android-apk-download/download/?key=0b0631f224bb3c03a3b5ff4ad37cc99db53cf9ac",
+        ),
+        (
+            entities.PackageVariant(
+                "APK",
+                "nodpi",
+                2022070701,
+                variant_info=(
+                    "https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-4-android-apk-download/"
+                ),
+            ),
+            "pogo_0.243.0_64_bundle.html",
+            "https://apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/pokemon-go-0-243-0-4-android-apk-download/download/?key=5a99f61e71380269ef0e71e33715ddbc073f966c",
+        )
+    ]
+)
+def test_process_variant(variant, filename, expected):
+    results = {
+        variant: get_test_contents(filename)
+    }
     parsing.process_variant_result(results)
-    assert (
-        variant1.download_url
-        == "https://www.apkmirror.com/wp-content/themes/APKMirror/download.php?id=2071632&forcebaseapk"
-    )
-    assert variant2.download_url == "https://www.apkmirror.com/wp-content/themes/APKMirror/download.php?id=2089155"
-    assert (
-        variant3.download_url
-        == "https://www.apkmirror.com/wp-content/themes/APKMirror/download.php?id=2086850&forcebaseapk"
-    )
+    assert variant.variant_download_page == expected
+
+
+@pytest.mark.parametrize(
+    "filename,expected", [
+        (
+            "pogo.html",
+            {
+                "Pokemon GO":
+                entities.PackageBase(
+                    "Pokemon GO",
+                    "com.nianticlabs.pokemongo",
+                    info_page="https://www.apkmirror.com/apk/niantic-inc/pokemon-go/",
+                    versions={
+                        "0.243.0": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-243-0-release/"),
+                        "0.241.1": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-241-1-release/"),
+                        "0.241.0": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-241-0-release/"),
+                        "0.239.2": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-239-2-release/"),
+                        "0.239.1": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-239-1-release/"),
+                        "0.239.0": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-239-0-release/"),
+                        "0.237.0": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-237-0-release/"),
+                        "0.235.0": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-235-0-release/"),
+                        "0.233.1": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-233-1-release/"),
+                        "0.233.0": entities.PackageVersion("https://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-233-0-release/"),
+                    }
+                )
+            }
+        ),
+    ]
+)
+def test_parse_package_page(filename, expected):
+    data = get_test_contents(filename)
+    assert parsing.process_package_page([data]) == expected

@@ -62,6 +62,11 @@ async def package_search_async(packages: List[str]) -> Dict[str, PackageBase]:
     return package_defs
 
 
+
+def search_primary_pages(packages: List[str]) -> Dict[str, PackageBase]:
+    """Performs a search against APKMirror and get exact match packages"""
+
+
 async def execute_package_search(packages: List[str]) -> List[str]:
     """Perform aiohttp requests to APKMirror
 
