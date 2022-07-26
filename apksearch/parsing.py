@@ -67,7 +67,7 @@ def process_release_result(results: Dict[PackageVersion, str]):
             architecture = variant_info[1].text
             dpi = variant_info[3].text
             download_page = "{}{}".format(BASE_URL, variant_info[4].find("a")["href"])
-            package_variant = PackageVariant(apk_type, dpi, version_code, variant_download_page=download_page)
+            package_variant = PackageVariant(apk_type, dpi, version_code, variant_info=download_page)
             if architecture not in package_version.arch:
                 package_version.arch[architecture] = []
             package_version.arch[architecture].append(package_variant)

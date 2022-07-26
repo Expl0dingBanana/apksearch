@@ -121,6 +121,11 @@ def test_process_variant(variant, filename, expected):
     assert variant.variant_download_page == expected
 
 
+# @TODO
+def test_process_release_result():
+    pass
+
+
 @pytest.mark.parametrize(
     "filename,expected", [
         (
