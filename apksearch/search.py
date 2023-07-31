@@ -86,7 +86,6 @@ async def generate_download_url(variant: PackageVariant) -> str:
 
     :param variant: Variant to determine URL
     """
-    loop = asyncio.get_running_loop()
     results = await _perform_basic_query([variant.variant_info])
     variant_defs = {
         variant: results[0]
