@@ -26,8 +26,8 @@ HEADERS = {
 logger = logging.getLogger(__name__)
 
 
-async def gather_from_dict(tasks: Dict[Hashable, Awaitable], loop=None, return_exceptions=False):
-    results = await asyncio.gather(*tasks.values(), loop=loop, return_exceptions=return_exceptions)
+async def gather_from_dict(tasks: Dict[Hashable, Awaitable], return_exceptions=False):
+    results = await asyncio.gather(*tasks.values(), return_exceptions=return_exceptions)
     return dict(zip(tasks.keys(), results))
 
 
@@ -87,12 +87,12 @@ async def generate_download_url(variant: PackageVariant) -> str:
     :param variant: Variant to determine URL
     """
     loop = asyncio.get_running_loop()
-    results = await _perform_basic_query(loop, [variant.variant_info])
+    results = await _perform_basic_query([variant.variant_info])
     variant_defs = {
         variant: results[0]
     }
     parsing.process_variant_result(variant_defs)
-    results = await _perform_basic_query(loop, [variant.variant_download_page])
+    results = await _perform_basic_query([variant.variant_download_page])
     download_results = {
         variant: results[0]
     }
@@ -110,8 +110,7 @@ async def execute_package_search(packages: List[str]) -> List[str]:
     :rtype: list
     """
     param_list: List[str] = _generate_params_list(packages)
-    loop = asyncio.get_running_loop()
-    return await _perform_search(loop, param_list)
+    return await _perform_search(param_list)
 
 
 async def execute_package_page(packages: List[str]) -> Dict[str, PackageBase]:
@@ -119,8 +118,7 @@ async def execute_package_page(packages: List[str]) -> Dict[str, PackageBase]:
 
     :param packages: List of root package pages to query
     """
-    loop = asyncio.get_running_loop()
-    results = await _perform_basic_query(loop, packages)
+    results = await _perform_basic_query(packages)
     return parsing.process_package_page(results)
 
 
@@ -134,8 +132,7 @@ async def execute_release_info(packages: Dict[str, PackageBase]) -> Dict[Package
     for info in packages.values():
         for package_version in info.versions.values():
             releases.append(package_version)
-    loop = asyncio.get_running_loop()
-    return await _perform_dict_lookup(loop, releases)
+    return await _perform_dict_lookup(releases)
 
 
 async def execute_variant_info(packages: Dict[str, PackageBase]) -> Dict[PackageVersion, str]:
@@ -144,13 +141,12 @@ async def execute_variant_info(packages: Dict[str, PackageBase]) -> Dict[Package
         for package_version in info.versions.values():
             for arch in package_version.arch.values():
                 variants.extend(arch)
-    loop = asyncio.get_running_loop()
-    return await _perform_dict_lookup(loop, variants)
+    return await _perform_dict_lookup(variants)
 
 
 async def gather_release_info(releases: List[PackageBase]) -> Tuple[PackageVersion, PackageVariant, str]:
     loop = asyncio.get_running_loop()
-    results = loop.run_until_complete(_perform_dict_lookup(loop, releases))
+    results = loop.run_until_complete(_perform_dict_lookup(releases))
     return results
 
 
@@ -160,7 +156,8 @@ async def _fetch_one(session, url, params):
         return await response.text()
 
 
-async def _perform_search(loop, query_params: List[str]):
+async def _perform_search(query_params: List[str]):
+    loop = asyncio.get_running_loop()
     async with aiohttp.ClientSession(loop=loop) as session:
         required_urls = [_fetch_one(session, QUERY_URL, param) for param in query_params]
         logger.info("About to query %s packages", len(required_urls))
@@ -171,8 +168,8 @@ async def _perform_search(loop, query_params: List[str]):
         return results
 
 
-async def _perform_basic_query(loop, urls: List[str]):
-    async with aiohttp.ClientSession(loop=loop) as session:
+async def _perform_basic_query(urls: List[str]):
+    async with aiohttp.ClientSession() as session:
         required_urls = [_fetch_one(session, url, {}) for url in urls]
         logger.info("About to query %s packages", len(required_urls))
         results = await asyncio.gather(
@@ -182,7 +179,7 @@ async def _perform_basic_query(loop, urls: List[str]):
         return results
 
 
-async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, PackageVariant]]):
+async def _perform_dict_lookup(requests: List[Union[PackageVersion, PackageVariant]]):
     if len(requests) == 0:
         return []
     if type(requests[0]) == PackageVersion:
@@ -191,6 +188,7 @@ async def _perform_dict_lookup(loop, requests: List[Union[PackageVersion, Packag
     else:
         identifier = "variants"
         url_attr = "variant_download_page"
+    loop = asyncio.get_running_loop()
     async with aiohttp.ClientSession(loop=loop) as session:
         tasks = {}
         logger.info("About to query %s %s", len(requests), identifier)
