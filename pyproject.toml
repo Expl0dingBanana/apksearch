@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.black]
 line-length = 120
-target-version = ['py36', 'py37', 'py38']
+target-version = ['py36', 'py37', 'py38', 'py39', 'py310', 'py311']
 include = '\.pyi?$'
 
 [tool.isort]
@@ -22,6 +22,7 @@ legacy_tox_ini = """
 envlist=
     lint
     py{38}
+    py{311}
 
 [testenv]
 skip_install = true

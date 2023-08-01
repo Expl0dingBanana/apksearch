@@ -1,6 +1,6 @@
 import logging
 
-from .search import package_search_match, generate_download_url
+from .search import generate_download_url, package_search_match
 
 __all__ = ["package_search_match", "generate_download_url"]
 

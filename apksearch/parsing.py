@@ -1,8 +1,8 @@
 import logging
 import re
 import unicodedata
-from typing import Dict, List
 import urllib
+from typing import Dict, List
 
 from bs4 import BeautifulSoup
 
