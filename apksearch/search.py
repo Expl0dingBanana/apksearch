@@ -87,14 +87,10 @@ async def generate_download_url(variant: PackageVariant) -> str:
     :param variant: Variant to determine URL
     """
     results = await _perform_basic_query([variant.variant_info])
-    variant_defs = {
-        variant: results[0]
-    }
+    variant_defs = {variant: results[0]}
     parsing.process_variant_result(variant_defs)
     results = await _perform_basic_query([variant.variant_download_page])
-    download_results = {
-        variant: results[0]
-    }
+    download_results = {variant: results[0]}
     parsing.process_variant_download_result(download_results)
     return variant.download_url
 
@@ -181,7 +177,7 @@ async def _perform_basic_query(urls: List[str]):
 async def _perform_dict_lookup(requests: List[Union[PackageVersion, PackageVariant]]):
     if len(requests) == 0:
         return []
-    if type(requests[0]) == PackageVersion:
+    if isinstance(requests[0], PackageVersion):
         identifier = "releases"
         url_attr = "link"
     else:
