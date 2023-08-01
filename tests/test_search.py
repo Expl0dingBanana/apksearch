@@ -1,8 +1,9 @@
 import pytest
-
-from apksearch import search, entities
-from . import get_test_contents
 from aioresponses import aioresponses
+
+from apksearch import entities, search
+
+from . import get_test_contents
 
 
 @pytest.mark.asyncio

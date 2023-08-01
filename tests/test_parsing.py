@@ -1,6 +1,9 @@
 import os
+
 import pytest
+
 from apksearch import entities, parsing
+
 from . import get_test_contents
 
 
