@@ -8,3 +8,4 @@ flake8-eradicate
 black
 pep8-naming
 tox
+pre-commit
